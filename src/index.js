@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ReactQueryDevtools } from 'react-query-devtools'
 import { hydrate, dehydrate } from 'react-query/hydration'
-import { GlobalLoader, Sidebar } from './components'
+import { GlobalLoader } from './components'
 import { queryCache } from './components/App'
 
 function cacheSync() {

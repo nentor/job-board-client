@@ -33,12 +33,7 @@ export class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
-          <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css"
-          />
-        </Head>
+        <Head></Head>
         <body>
           <Main suppresHydrationWarning />
           <NextScript />
