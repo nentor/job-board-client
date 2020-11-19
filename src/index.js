@@ -4,11 +4,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ReactQueryDevtools } from 'react-query-devtools'
 import { hydrate, dehydrate } from 'react-query/hydration'
 import { GlobalLoader, Sidebar } from './components'
-
-import { AdminPosts } from './screens/admin'
-import { AdminPost } from './screens/admin/Post'
-import { BlogPosts } from './screens/blog'
-import { BlogPost } from './screens/blog/Post'
 import { queryCache } from './components/App'
 
 function cacheSync() {
@@ -39,7 +34,6 @@ export const Root = () => {
     <SupressHydrationWarning>
       <BrowserRouter>
         <Wrapper>
-          <Sidebar />
           <Main>
             <Routes>
               <Route
@@ -50,10 +44,6 @@ export const Root = () => {
                   </>
                 }
               />
-              <Route path="/admin" element={<AdminPosts />} />
-              <Route path="/admin/:postId" element={<AdminPost />} />
-              <Route path="/blog" element={<BlogPosts />} />
-              <Route path="/blog/:postId" element={<BlogPost />} />
             </Routes>
           </Main>
         </Wrapper>
