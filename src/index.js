@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ReactQueryDevtools } from 'react-query-devtools'
 import { hydrate, dehydrate } from 'react-query/hydration'
 import { GlobalLoader } from './components'
+import { Home } from './screens/Home'
 import { queryCache } from './components/App'
 
 function cacheSync() {
@@ -36,14 +37,7 @@ export const Root = () => {
         <Wrapper>
           <Main>
             <Routes>
-              <Route
-                path="/"
-                element={
-                  <>
-                    <h1>Welcome!</h1>
-                  </>
-                }
-              />
+              <Route path="/" element={<Home />} />
             </Routes>
           </Main>
         </Wrapper>
