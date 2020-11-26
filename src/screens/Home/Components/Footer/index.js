@@ -1,5 +1,18 @@
 import React from 'react'
+import styled from 'styled-components'
 
-export const Footer = () => {
-  return <div>Footer</div>
-}
+
+const Component = styled.div`
+  color: red;
+`;
+
+render(
+  <Component
+    as="button"
+    onClick={() => alert('It works!')}
+  >
+    Hello World!
+  </Component>
+)
+
+export default Footer;
