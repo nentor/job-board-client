@@ -35,6 +35,11 @@ export const CreateJob = () => {
             </p>
           </FlexItem>
         </Flex>
+        <InputField
+          title="Job Title"
+          inputText="Example: “Senior Designer”.   Titles must describe one position."
+          isRequired={true}
+        />
       </NewListing>
     </>
   )
