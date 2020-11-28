@@ -1,5 +1,12 @@
 import React from 'react'
+import styled from 'styled-components'
 
-export const NewListing = () => {
-  return <div></div>
+const Wrapper = styled.section`
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background: #fff;
+`
+
+export const NewListing = ({ children }) => {
+  return <Wrapper>{children}</Wrapper>
 }
