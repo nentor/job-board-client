@@ -9,5 +9,9 @@ import {
 } from './Components'
 
 export const CreateJob = () => {
-  return <div></div>
+  return (
+    <NewListing>
+      <Title>Hello World</Title>
+    </NewListing>
+  )
 }
