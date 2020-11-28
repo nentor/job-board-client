@@ -1,4 +1,5 @@
 import React from 'react'
+import { createGlobalStyle } from 'styled-components'
 
 import {
   InputField,
@@ -8,13 +9,25 @@ import {
   Title,
 } from './Components'
 
+const Reset = createGlobalStyle`
+  * {
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+  }
+`
+
 export const CreateJob = () => {
   return (
-    <NewListing>
-      <Title>Hello World</Title>
-      <p>
-        Required Fields <RequiredCircle />
-      </p>
-    </NewListing>
+    <>
+      <Reset />
+      <NewListing>
+        <Title>Hello World</Title>
+        <p>
+          Required Fields <RequiredCircle />
+        </p>
+      </NewListing>
+    </>
   )
 }
