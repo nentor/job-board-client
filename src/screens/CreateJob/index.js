@@ -1,6 +1,9 @@
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 
+import { Grid, Col, Row } from 'react-styled-flexboxgrid'
+import Flex, { FlexItem } from 'styled-flex-component'
+
 import {
   InputField,
   NewListing,
@@ -23,10 +26,16 @@ export const CreateJob = () => {
     <>
       <Reset />
       <NewListing>
-        <Title>Hello World</Title>
-        <p>
-          Required Fields <RequiredCircle />
-        </p>
+        <Flex justifyBetween alignCenter>
+          <FlexItem>
+            <Title>First, tell us about the position</Title>
+          </FlexItem>
+          <FlexItem>
+            <p>
+              Required Fields <RequiredCircle />
+            </p>
+          </FlexItem>
+        </Flex>
       </NewListing>
     </>
   )
