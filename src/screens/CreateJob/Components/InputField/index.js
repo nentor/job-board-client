@@ -1,5 +1,5 @@
 import React from 'react'
 
-export default function Title() {
+export const InputField = () => {
   return <div></div>
 }

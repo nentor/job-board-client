@@ -1,5 +1,5 @@
 import React from 'react'
 
-export default function TextEditor() {
+export const NewListing = () => {
   return <div></div>
 }

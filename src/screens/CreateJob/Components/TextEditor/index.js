@@ -1,5 +1,5 @@
 import React from 'react'
 
-export default function RequiredCircle() {
+export const TextEditor = () => {
   return <div></div>
 }

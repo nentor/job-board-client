@@ -1,5 +1,5 @@
 import React from 'react'
 
-export default function NewListing() {
+export const RequiredCircle = () => {
   return <div></div>
 }
