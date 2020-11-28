@@ -4,7 +4,14 @@ import styled from 'styled-components'
 import { RequiredCircle } from '../index'
 
 const Container = styled.div`
-  margin-top: 20px;
+  margin-top: 30px;
+
+  & label {
+    font-weight: 900;
+    color: #212529;
+    font-size: 1.1rem;
+    display: block;
+  }
 `
 
 const Input = styled.input`
@@ -17,8 +24,6 @@ const Input = styled.input`
   border-color: rgba(144, 146, 148, 0.2);
   border-style: solid;
   border-radius: 3px;
-  font-family: 'Neufile Grotesk Regular', sans-serif;
-  margin: 0 0 5px 0;
   background-color: #f8f9fa;
   outline-width: 2px;
   outline-color: rgba(144, 146, 148, 0.2);
@@ -27,10 +32,10 @@ const Input = styled.input`
 export const InputField = ({ type, title, inputText, isRequired }) => {
   return (
     <Container>
-      <h3>
+      <label for={title}>
         {title} {isRequired && <RequiredCircle />}
-      </h3>
-      <Input type={type} />
+      </label>
+      <Input id={title} type={type} />
       <p>{inputText}</p>
     </Container>
   )
