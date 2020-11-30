@@ -32,7 +32,7 @@ const Input = styled.input`
 export const InputField = ({ type, title, inputText, isRequired }) => {
   return (
     <Container>
-      <label for={title}>
+      <label htmlFor={title}>
         {title} {isRequired && <RequiredCircle />}
       </label>
       <Input id={title} type={type} />
