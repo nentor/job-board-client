@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Container = styled.div`
+export const Container = styled.div`
   margin-top: 30px;
 
   & label {
@@ -11,5 +11,3 @@ const Container = styled.div`
     display: block;
   }
 `
-
-export default Container
