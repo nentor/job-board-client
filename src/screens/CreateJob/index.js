@@ -9,6 +9,7 @@ import {
   RequiredCircle,
   TextEditor,
   Title,
+  SelectField,
 } from './Components'
 
 const Reset = createGlobalStyle`
@@ -40,6 +41,24 @@ export const CreateJob = () => {
           inputText="Example: “Senior Designer”.   Titles must describe one position."
           isRequired={true}
         />
+        <Flex>
+          <FlexItem>
+            <SelectField
+              options={[
+                'Design',
+                'Programming',
+                'Customer Support',
+                'Copywriting',
+                'DevOps and SysAdmin',
+                'Sales and Marketing',
+                'Business, Management and Finance',
+                'Product',
+                'All Other Remote',
+              ]}
+            />
+          </FlexItem>
+          <FlexItem></FlexItem>
+        </Flex>
       </NewListing>
     </>
   )

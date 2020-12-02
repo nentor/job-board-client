@@ -9,6 +9,12 @@ const Select = styled.select`
   border: 1.5px solid rgba(144, 146, 148, 0.2);
 `
 
-export const SelectField = () => {
-  return <Select></Select>
+export const SelectField = ({ options }) => {
+  return (
+    <Select>
+      {options.map((option) => (
+        <option value={option}>{option}</option>
+      ))}
+    </Select>
+  )
 }
