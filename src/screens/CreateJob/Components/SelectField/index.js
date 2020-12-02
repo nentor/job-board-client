@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { Container } from '../index'
+
 const Select = styled.select`
   font-size: 0.8em;
   outline: none;
@@ -11,10 +13,12 @@ const Select = styled.select`
 
 export const SelectField = ({ options }) => {
   return (
-    <Select>
-      {options.map((option) => (
-        <option value={option}>{option}</option>
-      ))}
-    </Select>
+    <Container>
+      <Select>
+        {options.map((option) => (
+          <option value={option}>{option}</option>
+        ))}
+      </Select>
+    </Container>
   )
 }

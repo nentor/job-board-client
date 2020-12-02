@@ -1,18 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { RequiredCircle } from '../index'
-
-const Container = styled.div`
-  margin-top: 30px;
-
-  & label {
-    font-weight: 900;
-    color: #212529;
-    font-size: 1.1rem;
-    display: block;
-  }
-`
+import { RequiredCircle, Container } from '../index'
 
 const Input = styled.input`
   max-width: 890px;
