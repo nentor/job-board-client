@@ -45,7 +45,7 @@ export const CreateJob = () => {
           <FlexItem>
             <SelectField
               title="Category"
-              isRequired="true"
+              isRequired={true}
               options={[
                 'Design',
                 'Programming',
