@@ -10,6 +10,7 @@ import {
   TextEditor,
   Title,
   SelectGroup,
+  RadioGroup,
 } from './Components'
 
 const Reset = createGlobalStyle`
@@ -59,7 +60,12 @@ export const CreateJob = () => {
               ]}
             />
           </FlexItem>
-          <FlexItem></FlexItem>
+          <FlexItem>
+            <RadioGroup
+              title="Job Type"
+              choices={[{ value: 'Full Name' }, { value: 'Contract' }]}
+            />
+          </FlexItem>
         </Flex>
       </NewListing>
     </>
