@@ -18,7 +18,7 @@ const Input = styled.input`
   outline-color: rgba(144, 146, 148, 0.2);
 `
 
-export const InputField = ({ type, title, inputText, isRequired }) => {
+export const InputGroup = ({ type, title, inputText, isRequired }) => {
   return (
     <Container>
       <label htmlFor={title}>

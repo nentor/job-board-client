@@ -4,12 +4,12 @@ import { createGlobalStyle } from 'styled-components'
 import Flex, { FlexItem } from 'styled-flex-component'
 
 import {
-  InputField,
+  InputGroup,
   NewListing,
   RequiredCircle,
   TextEditor,
   Title,
-  SelectField,
+  SelectGroup,
 } from './Components'
 
 const Reset = createGlobalStyle`
@@ -36,14 +36,14 @@ export const CreateJob = () => {
             </p>
           </FlexItem>
         </Flex>
-        <InputField
+        <InputGroup
           title="Job Title"
           inputText="Example: “Senior Designer”.   Titles must describe one position."
           isRequired={true}
         />
         <Flex>
           <FlexItem>
-            <SelectField
+            <SelectGroup
               title="Category"
               isRequired={true}
               options={[

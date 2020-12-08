@@ -12,7 +12,7 @@ const Select = styled.select`
   margin-top: 5px;
 `
 
-export const SelectField = ({ title, isRequired, options }) => {
+export const SelectGroup = ({ title, isRequired, options }) => {
   return (
     <Container>
       <label htmlFor={title}>
