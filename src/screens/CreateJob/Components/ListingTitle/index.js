@@ -8,6 +8,6 @@ const Label = styled.label`
   display: block;
 `
 
-export const ListingTitle = ({ name }) => {
+export const ListingTitle = ({ name, children }) => {
   return <Label htmlFor={name}>{children}</Label>
 }

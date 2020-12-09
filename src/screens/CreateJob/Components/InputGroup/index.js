@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { RequiredCircle, Container } from '../index'
+import { RequiredCircle, Container, ListingTitle } from '../index'
 
 const Input = styled.input`
   max-width: 890px;
@@ -21,9 +21,9 @@ const Input = styled.input`
 export const InputGroup = ({ type, title, inputText, isRequired }) => {
   return (
     <Container>
-      <label htmlFor={title}>
+      <ListingTitle name={title}>
         {title} {isRequired && <RequiredCircle />}
-      </label>
+      </ListingTitle>
       <Input id={title} type={type} />
       <p>{inputText}</p>
     </Container>
