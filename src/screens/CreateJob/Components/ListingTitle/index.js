@@ -9,5 +9,5 @@ const Label = styled.label`
 `
 
 export const ListingTitle = ({ name }) => {
-  return <Label htmlFor={name}>{name}</Label>
+  return <Label htmlFor={name}>{children}</Label>
 }
