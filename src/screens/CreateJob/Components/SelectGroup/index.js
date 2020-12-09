@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Container, RequiredCircle } from '../index'
+import { Container, RequiredCircle, ListingTitle } from '../index'
 
 const Select = styled.select`
   font-size: 0.8em;
@@ -15,9 +15,9 @@ const Select = styled.select`
 export const SelectGroup = ({ title, isRequired, options }) => {
   return (
     <Container>
-      <label htmlFor={title}>
+      <ListingTitle name={title}>
         {title} {isRequired && <RequiredCircle />}
-      </label>
+      </ListingTitle>
       <Select id={title}>
         {options.map((option) => (
           <option value={option}>{option}</option>
