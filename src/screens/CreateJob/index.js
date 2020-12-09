@@ -64,6 +64,7 @@ export const CreateJob = () => {
             <RadioGroup
               title="Job Type"
               choices={[{ value: 'Full Name' }, { value: 'Contract' }]}
+              isRequired={true}
             />
           </FlexItem>
         </Flex>

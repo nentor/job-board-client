@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Container, RequiredField, ListingTitle } from '../index'
+import { Container, RequiredCircle, ListingTitle } from '../index'
 
 const RadioButton = styled.input.attrs({
   type: 'radio',
