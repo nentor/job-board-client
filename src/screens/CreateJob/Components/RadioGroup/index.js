@@ -1,27 +1,36 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Container, RequiredField } from '../index'
+import { Container, RequiredField, ListingTitle } from '../index'
 
-const Radio = styled.input.attrs({
+const RadioButton = styled.input.attrs({
   type: 'radio',
 })`
-  margin: 0 5px;
+  margin-right: 3px;
 `
 
 const RadioGroupWrapper = styled.div`
   display: flex;
+  margin-top: 20px;
+
+  & div {
+    padding-right: 30px;
+
+    display: flex;
+    align-items: center;
+  }
 `
 
 export const RadioGroup = ({ title, isRequired, choices }) => {
   return (
     <Container>
+      <ListingTitle>Job Type {isRequired && <RequiredCircle />}</ListingTitle>
       <RadioGroupWrapper>
         {choices.map((choice) => (
-          <>
+          <div>
+            <RadioButton id={choice.value} value={choice.value} />
             <label htmlFor={choice.value}>{choice.value}</label>
-            <Radio id={choice.value} value={choice.value} />
-          </>
+          </div>
         ))}
       </RadioGroupWrapper>
     </Container>
