@@ -37,11 +37,15 @@ export const CreateJob = () => {
             </p>
           </FlexItem>
         </Flex>
-        <InputGroup
-          title="Job Title"
-          inputText="Example: “Senior Designer”.   Titles must describe one position."
-          isRequired={true}
-        />
+        <Flex>
+          <FlexItem>
+            <InputGroup
+              title="Job Title"
+              inputText="Example: “Senior Designer”.   Titles must describe one position."
+              isRequired={true}
+            />
+          </FlexItem>
+        </Flex>
         <Flex>
           <FlexItem>
             <SelectGroup
