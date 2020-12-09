@@ -68,6 +68,42 @@ export const CreateJob = () => {
             />
           </FlexItem>
         </Flex>
+        <Flex>
+          <FlexItem>
+            <InputGroup
+              title="Company HQ"
+              inputText="Example: “Chicago, IL”,   “Stockholm, Sweden”"
+              isRequired={true}
+            />
+          </FlexItem>
+          <FlexItem>
+            <SelectGroup
+              title="Regional Restrictions"
+              isRequired={true}
+              options={[
+                'Anywhere (100% Remote) Only',
+                'USA Only',
+                'North America Only',
+                'Europe Only',
+                'Americas Only',
+                'Canada Only',
+                'EMEA Only',
+                'Asia Only',
+                'Africa Only',
+                "Other (don't specify)",
+              ]}
+            />
+          </FlexItem>
+        </Flex>
+        <Flex>
+          <FlexItem>
+            <InputGroup
+              title="How to Apply"
+              inputText="Link to Application page or Email address"
+              isRequired={true}
+            />
+          </FlexItem>
+        </Flex>
       </NewListing>
     </>
   )
