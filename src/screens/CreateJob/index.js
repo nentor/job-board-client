@@ -127,12 +127,19 @@ export const CreateJob = () => {
         </Flex>
         <Flex>
           <FlexItem>
-            <InputGroup title="Company Name" isRequired={true} />
+            <InputGroup
+              title="Company Name"
+              isRequired={true}
+              inputText="Enter your company or organization’s name."
+            />
           </FlexItem>
         </Flex>
         <Flex>
           <FlexItem>
-            <InputGroup title="Company Statement" />
+            <InputGroup
+              title="Company Statement"
+              inputText="Enter your company or organization’s mission statement. This will be displayed on your company’s profile."
+            />
           </FlexItem>
         </Flex>
         <Flex>
