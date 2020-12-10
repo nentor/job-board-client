@@ -11,7 +11,6 @@ const RadioButton = styled.input.attrs({
 
 const RadioGroupWrapper = styled.div`
   display: flex;
-  margin-top: 20px;
 
   & div {
     padding-right: 30px;
