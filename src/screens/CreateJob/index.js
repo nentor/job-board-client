@@ -124,6 +124,11 @@ export const CreateJob = () => {
             </p>
           </FlexItem>
         </Flex>
+        <Flex>
+          <FlexItem>
+            <InputGroup title="Company Name" isRequired={true} />
+          </FlexItem>
+        </Flex>
       </NewListing>
     </>
   )
