@@ -108,6 +108,11 @@ export const CreateJob = () => {
             />
           </FlexItem>
         </Flex>
+        <Flex>
+          <FlexItem>
+            <TextEditor title="Job Description" isRequired={true} />
+          </FlexItem>
+        </Flex>
       </NewListing>
     </>
   )
