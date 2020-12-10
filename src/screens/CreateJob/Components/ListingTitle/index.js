@@ -6,6 +6,7 @@ const Label = styled.label`
   color: #212529;
   font-size: 1.1rem;
   display: block;
+  margin-bottom: 6px;
 `
 
 export const ListingTitle = ({ name, children }) => {
