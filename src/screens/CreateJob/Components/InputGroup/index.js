@@ -6,7 +6,7 @@ import { RequiredCircle, Container, ListingTitle } from '../index'
 const Input = styled.input`
   max-width: 890px;
   width: 890px;
-  margin: 5px 0 3px;
+  margin: 0 0 3px;
   font-size: 0.95rem;
   padding: 16px 12px 16px 12px;
   cursor: auto;

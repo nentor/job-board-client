@@ -9,7 +9,6 @@ const Select = styled.select`
   width: 435px;
   height: 60px;
   border: 1.5px solid rgba(144, 146, 148, 0.2);
-  margin-top: 5px;
 `
 
 export const SelectGroup = ({ title, isRequired, options }) => {
