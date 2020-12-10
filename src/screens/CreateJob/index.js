@@ -113,6 +113,17 @@ export const CreateJob = () => {
             <TextEditor title="Job Description" isRequired={true} />
           </FlexItem>
         </Flex>
+        <Flex column>
+          <FlexItem>
+            <Title>Tell Us More About Your Company</Title>
+          </FlexItem>
+          <FlexItem>
+            <p>
+              Posted before? Just enter your email and logo, all other info will
+              be pulled in from your last position!
+            </p>
+          </FlexItem>
+        </Flex>
       </NewListing>
     </>
   )
