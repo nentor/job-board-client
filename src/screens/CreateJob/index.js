@@ -11,6 +11,7 @@ import {
   Title,
   SelectGroup,
   RadioGroup,
+  FileUploader,
 } from './Components'
 
 const Reset = createGlobalStyle`
@@ -132,6 +133,14 @@ export const CreateJob = () => {
         <Flex>
           <FlexItem>
             <InputGroup title="Company Statement" />
+          </FlexItem>
+        </Flex>
+        <Flex>
+          <FlexItem>
+            <FileUploader
+              title="Logo"
+              inputText="It’s highly recommended to use your Twitter or Facebook avatar. Optional — Your company logo will appear at the top of your listing."
+            />
           </FlexItem>
         </Flex>
       </NewListing>
