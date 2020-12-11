@@ -2,6 +2,7 @@ import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 
 import Flex, { FlexItem } from 'styled-flex-component'
+import { Margin } from 'styled-components-spacing'
 
 import {
   InputGroup,
@@ -64,11 +65,13 @@ export const CreateJob = () => {
             />
           </FlexItem>
           <FlexItem>
-            <RadioGroup
-              title="Job Type"
-              choices={[{ value: 'Full Name' }, { value: 'Contract' }]}
-              isRequired={true}
-            />
+            <Margin left={4}>
+              <RadioGroup
+                title="Job Type"
+                choices={[{ value: 'Full Name' }, { value: 'Contract' }]}
+                isRequired={true}
+              />
+            </Margin>
           </FlexItem>
         </Flex>
         <Flex>
@@ -80,22 +83,24 @@ export const CreateJob = () => {
             />
           </FlexItem>
           <FlexItem>
-            <SelectGroup
-              title="Regional Restrictions"
-              isRequired={true}
-              options={[
-                'Anywhere (100% Remote) Only',
-                'USA Only',
-                'North America Only',
-                'Europe Only',
-                'Americas Only',
-                'Canada Only',
-                'EMEA Only',
-                'Asia Only',
-                'Africa Only',
-                "Other (don't specify)",
-              ]}
-            />
+            <Margin left={4}>
+              <SelectGroup
+                title="Regional Restrictions"
+                isRequired={true}
+                options={[
+                  'Anywhere (100% Remote) Only',
+                  'USA Only',
+                  'North America Only',
+                  'Europe Only',
+                  'Americas Only',
+                  'Canada Only',
+                  'EMEA Only',
+                  'Asia Only',
+                  'Africa Only',
+                  "Other (don't specify)",
+                ]}
+              />
+            </Margin>
           </FlexItem>
         </Flex>
 
@@ -144,11 +149,13 @@ export const CreateJob = () => {
             />
           </FlexItem>
           <FlexItem>
-            <InputGroup
-              title="Email"
-              isRequired={true}
-              inputText="We’ll send your receipt and confirmation email here."
-            />
+            <Margin left={4}>
+              <InputGroup
+                title="Email"
+                isRequired={true}
+                inputText="We’ll send your receipt and confirmation email here."
+              />
+            </Margin>
           </FlexItem>
         </Flex>
       </NewListing>
