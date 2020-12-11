@@ -134,6 +134,23 @@ export const CreateJob = () => {
           title="Logo"
           inputText="It’s highly recommended to use your Twitter or Facebook avatar. Optional — Your company logo will appear at the top of your listing."
         />
+
+        <Flex>
+          <FlexItem>
+            <InputGroup
+              title="Company's Website URL"
+              isRequired={true}
+              inputText="Example: https://mybusiness.com/"
+            />
+          </FlexItem>
+          <FlexItem>
+            <InputGroup
+              title="Email"
+              isRequired={true}
+              inputText="We’ll send your receipt and confirmation email here."
+            />
+          </FlexItem>
+        </Flex>
       </NewListing>
     </>
   )
