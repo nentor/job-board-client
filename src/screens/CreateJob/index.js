@@ -38,15 +38,13 @@ export const CreateJob = () => {
             </p>
           </FlexItem>
         </Flex>
-        <Flex>
-          <FlexItem>
-            <InputGroup
-              title="Job Title"
-              inputText="Example: “Senior Designer”.   Titles must describe one position."
-              isRequired={true}
-            />
-          </FlexItem>
-        </Flex>
+
+        <InputGroup
+          title="Job Title"
+          inputText="Example: “Senior Designer”.   Titles must describe one position."
+          isRequired={true}
+        />
+
         <Flex>
           <FlexItem>
             <SelectGroup
@@ -100,20 +98,15 @@ export const CreateJob = () => {
             />
           </FlexItem>
         </Flex>
-        <Flex>
-          <FlexItem>
-            <InputGroup
-              title="How to Apply"
-              inputText="Link to Application page or Email address"
-              isRequired={true}
-            />
-          </FlexItem>
-        </Flex>
-        <Flex>
-          <FlexItem>
-            <TextEditor title="Job Description" isRequired={true} />
-          </FlexItem>
-        </Flex>
+
+        <InputGroup
+          title="How to Apply"
+          inputText="Link to Application page or Email address"
+          isRequired={true}
+        />
+
+        <TextEditor title="Job Description" isRequired={true} />
+
         <Flex column>
           <FlexItem>
             <Title>Tell Us More About Your Company</Title>
@@ -125,31 +118,22 @@ export const CreateJob = () => {
             </p>
           </FlexItem>
         </Flex>
-        <Flex>
-          <FlexItem>
-            <InputGroup
-              title="Company Name"
-              isRequired={true}
-              inputText="Enter your company or organization’s name."
-            />
-          </FlexItem>
-        </Flex>
-        <Flex>
-          <FlexItem>
-            <InputGroup
-              title="Company Statement"
-              inputText="Enter your company or organization’s mission statement. This will be displayed on your company’s profile."
-            />
-          </FlexItem>
-        </Flex>
-        <Flex>
-          <FlexItem>
-            <FileUploader
-              title="Logo"
-              inputText="It’s highly recommended to use your Twitter or Facebook avatar. Optional — Your company logo will appear at the top of your listing."
-            />
-          </FlexItem>
-        </Flex>
+
+        <InputGroup
+          title="Company Name"
+          isRequired={true}
+          inputText="Enter your company or organization’s name."
+        />
+
+        <InputGroup
+          title="Company Statement"
+          inputText="Enter your company or organization’s mission statement. This will be displayed on your company’s profile."
+        />
+
+        <FileUploader
+          title="Logo"
+          inputText="It’s highly recommended to use your Twitter or Facebook avatar. Optional — Your company logo will appear at the top of your listing."
+        />
       </NewListing>
     </>
   )
