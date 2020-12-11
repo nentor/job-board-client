@@ -158,6 +158,8 @@ export const CreateJob = () => {
             </Margin>
           </FlexItem>
         </Flex>
+
+        <TextEditor title="Company Description" />
       </NewListing>
     </>
   )
