@@ -60,6 +60,8 @@ a {
 }
 `
 
+// should have 62.5% font size so we could use rem units
+
 function cacheSync() {
   if (typeof localStorage !== 'undefined') {
     const cache = localStorage.getItem('queryCache_1')

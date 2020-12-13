@@ -34,26 +34,13 @@ export const Root = () => {
   return (
     <SupressHydrationWarning>
       <BrowserRouter>
-        <Wrapper>
-          <Main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-            </Routes>
-          </Main>
-        </Wrapper>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+
         <GlobalLoader />
         <ReactQueryDevtools />
       </BrowserRouter>
     </SupressHydrationWarning>
   )
 }
-
-export const Wrapper = styled.div`
-  display: flex;
-  height: 96vh;
-`
-
-export const Main = styled.div`
-  flex: 1;
-  padding: 1rem;
-`
