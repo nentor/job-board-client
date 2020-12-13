@@ -192,8 +192,9 @@ const LiMobile = styled.div`
 
 const MobileFooter = styled.div`
   font-size: 16px;
-  color: white;
+  color: #ffffff;
   font-family: 'Neufile Grotesk Regular', sans-serif;
+
 
   @media (min-width: 768px) {
     display: none;
@@ -225,7 +226,6 @@ const Anchor = styled.div`
   cursor: pointer;
   color: #f03e3e;
   margin-top: 4px;
-  font-weight: 900px;
   line-height: 2.5;
   font-size: 16px;
 
@@ -264,7 +264,7 @@ const Job = styled.div`
   color: #f8f9fa;
   letter-spacing: 1px;
   font-size: 1.1em;
-  font-weight: 500;
+ 
 
   @media (max-width: 600px) {
     display: none;
@@ -273,7 +273,7 @@ const Job = styled.div`
 
 const Button = styled.button`
   background-color: #f03e3e;
-  color: white;
+  color: #ffffff;
   border: none;
   padding: 15px 32px;
   text-align: center;
@@ -284,7 +284,6 @@ const Button = styled.button`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-right: 10px;
   outline: none;
 
   &:hover {
@@ -369,12 +368,11 @@ const BannerResources = styled.div`
   font-family: 'Neufile Grotesk Regular', sans-serif;
   font-size: 30px;
   display: block;
-  background: white;
+  background:  #FFFAFA;
   top: 235px;
   padding-right: 10px;
   width: 110%;
-  box-shadow: 0px 0px 2px;
-  z-index: 11;
+  
 
   @media (max-width: 600px) {
     display: none;
