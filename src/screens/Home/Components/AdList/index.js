@@ -26,6 +26,30 @@ const mockData = [
     category: 'tablet',
     isNew: true,
   },
+  {
+    user: 'RandomUser',
+    title: 'Нужда от компютър',
+    contact: '0888888888',
+    city: 'гр. Пловдив',
+    category: 'computer',
+    isNew: true,
+  },
+  {
+    user: 'Sasho Dimitrov',
+    title: 'Нужда от телефон',
+    contact: '0999999999',
+    city: 'гр. София',
+    category: 'phone',
+    isNew: false,
+  },
+  {
+    user: 'Petur Raychev',
+    title: 'Нужда от таблет',
+    contact: '077777777',
+    city: 'гр. София',
+    category: 'tablet',
+    isNew: true,
+  },
 ]
 
 export const AdList = () => {
