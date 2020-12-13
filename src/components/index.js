@@ -1,4 +1,6 @@
 export * from './Document'
 export * from './App'
-export * from './GlobalLoader'
-export * from './Loader'
+
+export * from './Footer'
+export * from './Navbar'
+export * from './AdList'

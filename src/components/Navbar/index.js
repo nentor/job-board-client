@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -7,6 +6,9 @@ import {
   faAngleRight,
   faSearch,
 } from '@fortawesome/free-solid-svg-icons'
+import { useClickOutside } from '../../hooks'
+
+//
 
 export const Navbar = () => {
   const [activeHeader, setActiveHeader] = useState(0)
@@ -15,6 +17,10 @@ export const Navbar = () => {
   const [searchBar, setSearchBar] = useState(false)
   const [mobile, setMobile] = useState(false)
   const [expandMobile, setExpandMobile] = useState(false)
+
+  const searchContainerRef = useRef(null)
+
+  useClickOutside(searchContainerRef, () => setSearchBar(false))
 
   const navig = [
     {
@@ -33,7 +39,7 @@ export const Navbar = () => {
 
   return (
     <div>
-      <Container>
+      <Container ref={searchContainerRef}>
         <div>
           <Logo
             alt="Logo"
@@ -94,19 +100,19 @@ export const Navbar = () => {
               </MobileNavItem>
             </Item>
           </CategoriesExpand>
-          <Link to="Https://www.google.com">
-            <Item isMobile>
-              <MobileNavItem
-                howTo
-                isFocused={isFocused === 2}
-                onMouseEnter={() => setIsFocused(2)}
-                onMouseLeave={() => setIsFocused(0)}
-              >
-                How to post an ad&emsp;
-                <FontAwesomeIcon icon={faAngleRight} />
-              </MobileNavItem>
-            </Item>
-          </Link>
+
+          <Item isMobile>
+            <MobileNavItem
+              howTo
+              isFocused={isFocused === 2}
+              onMouseEnter={() => setIsFocused(2)}
+              onMouseLeave={() => setIsFocused(0)}
+            >
+              How to post an ad&emsp;
+              <FontAwesomeIcon icon={faAngleRight} />
+            </MobileNavItem>
+          </Item>
+
           <HowToExpand isActive={expandMobile}></HowToExpand>
           <Item isMobile>
             <MobileNavItem
@@ -136,7 +142,6 @@ export const Navbar = () => {
           {navig.map((item) => {
             return (
               //Uncomment whenever the links are ready
-              // <Link to={item.href}>
               <Item>
                 <NavigationItem
                   isFocused={isFocused === item.id}
@@ -147,7 +152,6 @@ export const Navbar = () => {
                   {navig[item.id].label}
                 </NavigationItem>
               </Item>
-              // </Link>
             )
           })}
           <Item>
@@ -376,6 +380,11 @@ export const SearchBar = styled.input`
     margin: 1rem;
     width: 93%;
   `}
+
+  ::placeholder {
+    color: #e2e2e2;
+    p
+  }
 `
 export const Hide = styled(Button)`
   display: ${(props) => (props.isShown ? 'block' : 'none')};

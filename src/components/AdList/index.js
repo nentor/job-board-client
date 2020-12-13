@@ -54,32 +54,34 @@ const mockData = [
 
 export const AdList = () => {
   return (
-    <List>
-      {mockData.map((adPost) => {
-        return (
-          <Post>
-            {adPost.isNew ? (
-              <>
-                <New>New</New>
-                <Highlight />
-              </>
-            ) : (
-              <></>
-            )}
-            <Tooltip>
-              <Img />
-            </Tooltip>
-            <PostUrl>
-              <Span>{adPost.user}</Span>
-              <br />
-              <Title>{adPost.title}</Title>
-              <br />
-              <Span>{adPost.city}</Span>
-            </PostUrl>
-          </Post>
-        )
-      })}
-    </List>
+    <ListContainer>
+      <List>
+        {mockData.map((adPost) => {
+          return (
+            <Post>
+              {adPost.isNew ? (
+                <>
+                  <New>New</New>
+                  <Highlight />
+                </>
+              ) : (
+                <></>
+              )}
+              <Tooltip>
+                <Img />
+              </Tooltip>
+              <PostUrl>
+                <Span>{adPost.user}</Span>
+                <br />
+                <Title>{adPost.title}</Title>
+                <br />
+                <Span>{adPost.city}</Span>
+              </PostUrl>
+            </Post>
+          )
+        })}
+      </List>
+    </ListContainer>
   )
 }
 
@@ -87,6 +89,11 @@ const List = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+`
+
+const ListContainer = styled.div`
+  margin: 0 auto;
+  max-width: 950px;
 `
 
 const Post = styled.ul`
