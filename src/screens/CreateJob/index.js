@@ -13,6 +13,7 @@ import {
   SelectGroup,
   RadioGroup,
   FileUploader,
+  Button,
 } from './Components'
 
 const Reset = createGlobalStyle`
@@ -160,6 +161,10 @@ export const CreateJob = () => {
         </Flex>
 
         <TextEditor title="Company Description" />
+
+        <Margin top={3}>
+          <Button>Post job listing</Button>
+        </Margin>
       </NewListing>
     </>
   )
