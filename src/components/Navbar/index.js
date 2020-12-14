@@ -103,7 +103,6 @@ export const Navbar = () => {
 
           <Item isMobile>
             <MobileNavItem
-              howTo
               isFocused={isFocused === 2}
               onMouseEnter={() => setIsFocused(2)}
               onMouseLeave={() => setIsFocused(0)}
@@ -113,7 +112,6 @@ export const Navbar = () => {
             </MobileNavItem>
           </Item>
 
-          <HowToExpand isActive={expandMobile}></HowToExpand>
           <Item isMobile>
             <MobileNavItem
               isFocused={isFocused === 3}
@@ -172,13 +170,6 @@ export const Navbar = () => {
           </Button>
         </Navig>
         <SearchBar isActive={searchBar} placeholder="Search Here" />
-        <Hide
-          isSmall
-          isShown={searchBar}
-          onClick={() => setSearchBar(!searchBar)}
-        >
-          x
-        </Hide>
       </Container>
 
       <Header>
@@ -215,7 +206,7 @@ export const MobileNavItem = styled.button`
     props.isFocused > 0 ? '0 1px 5px rgba(10, 10, 10, 0.8)' : 'none'};
   color: ${(props) => (props.isFocused > 0 ? 'red' : 'black')};
   width: 100%;
-  height: 5rem;
+  height: 3.5rem;
   border: none;
   &:focus {
     outline: none;
@@ -229,7 +220,7 @@ export const MobileNavItem = styled.button`
     height: 3rem;
     width: 97%;
     margin: auto;
-    background: #eee;
+    background: #fee;
   `}
 `
 
@@ -237,9 +228,6 @@ export const MobileNavItem = styled.button`
 export const CategoriesExpand = styled.div`
   display: ${(props) => (props.isActive == 1 ? 'block' : 'none')};
   background: inherit;
-`
-export const HowToExpand = styled.div`
-  display: ${(props) => (props.isActive == 2 ? 'block' : 'none')};
 `
 
 export const Container = styled.div`
@@ -362,7 +350,9 @@ const Button = styled.button`
 export const SearchBar = styled.input`
   display: ${(props) => (props.isActive ? 'block' : 'none')};
   position: relative;
-  width: 97.5%;
+  width: 100%;
+  font-size: 15px;
+  margin: 0px 0px 10px 60px;
   height: auto;
   border: none;
   box-shadow: 0 1px 5px rgba(10, 10, 10, 0.3);
@@ -382,16 +372,8 @@ export const SearchBar = styled.input`
   `}
 
   ::placeholder {
-    color: #e2e2e2;
-    p
+    color: #ddd;
   }
-`
-export const Hide = styled(Button)`
-  display: ${(props) => (props.isShown ? 'block' : 'none')};
-  width: 1.5%;
-  height: 2%;
-  float: right;
-  margin: 0;
 `
 
 export const Header = styled.div`
