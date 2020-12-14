@@ -1,14 +1,10 @@
 import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faAngleDown,
-  faAngleRight,
-  faSearch,
-} from '@fortawesome/free-solid-svg-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useClickOutside } from '../../hooks'
-
-//
+import { MobileNav } from './Components'
+import { DesktopNav } from './Components'
 
 export const Navbar = () => {
   const [activeHeader, setActiveHeader] = useState(0)
@@ -16,7 +12,6 @@ export const Navbar = () => {
   const [isSearching, setIsSearching] = useState(false)
   const [searchBar, setSearchBar] = useState(false)
   const [mobile, setMobile] = useState(false)
-  const [expandMobile, setExpandMobile] = useState(false)
 
   const searchContainerRef = useRef(null)
 
@@ -45,130 +40,10 @@ export const Navbar = () => {
             alt="Logo"
             src="https://avatars1.githubusercontent.com/u/72261383?s=200&v=4"
           />
-          <Logo
-            isMobile
-            alt="Logo"
-            src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_469226.png&f=1&nofb=1"
-          />
-          <Button isLogo onClick={() => setMobile(!mobile)}></Button>
         </div>
-        <MobileNavig isActive={mobile}>
-          <SearchBar isMobile isActive={mobile} placeholder="Search Here..." />
-          <Item isMobile>
-            <MobileNavItem
-              isFocused={isFocused === 1}
-              onMouseEnter={() => setIsFocused(1)}
-              onMouseLeave={() => setIsFocused(0)}
-              onClick={() => setExpandMobile(!expandMobile)}
-            >
-              Categories&emsp;
-              <FontAwesomeIcon icon={faAngleDown} />
-            </MobileNavItem>
-          </Item>
-          <CategoriesExpand isActive={expandMobile}>
-            <Item isMobile>
-              <MobileNavItem
-                isExtended
-                isFocused={isFocused === 5}
-                onMouseEnter={() => setIsFocused(5)}
-                onMouseLeave={() => setIsFocused(0)}
-              >
-                Mobiles&emsp;
-                <FontAwesomeIcon icon={faAngleRight} />
-              </MobileNavItem>
-            </Item>
-            <Item isMobile>
-              <MobileNavItem
-                isExtended
-                isFocused={isFocused === 6}
-                onMouseEnter={() => setIsFocused(6)}
-                onMouseLeave={() => setIsFocused(0)}
-              >
-                PC&emsp;
-                <FontAwesomeIcon icon={faAngleRight} />
-              </MobileNavItem>
-            </Item>
-            <Item isMobile>
-              <MobileNavItem
-                isExtended
-                isFocused={isFocused === 7}
-                onMouseEnter={() => setIsFocused(7)}
-                onMouseLeave={() => setIsFocused(0)}
-              >
-                Laptops&emsp;
-                <FontAwesomeIcon icon={faAngleRight} />
-              </MobileNavItem>
-            </Item>
-          </CategoriesExpand>
+        <MobileNav />
+        <DesktopNav />
 
-          <Item isMobile>
-            <MobileNavItem
-              isFocused={isFocused === 2}
-              onMouseEnter={() => setIsFocused(2)}
-              onMouseLeave={() => setIsFocused(0)}
-            >
-              How to post an ad&emsp;
-              <FontAwesomeIcon icon={faAngleRight} />
-            </MobileNavItem>
-          </Item>
-
-          <Item isMobile>
-            <MobileNavItem
-              isFocused={isFocused === 3}
-              onMouseEnter={() => setIsFocused(3)}
-              onMouseLeave={() => setIsFocused(0)}
-              onClick={() => setExpandMobile(3)}
-            >
-              About us&emsp;
-              <FontAwesomeIcon icon={faAngleRight} />
-            </MobileNavItem>
-          </Item>
-          <Item isMobile>
-            <MobileNavItem
-              isFocused={isFocused === 4}
-              onMouseEnter={() => setIsFocused(4)}
-              onMouseLeave={() => setIsFocused(0)}
-              onClick={() => setExpandMobile(4)}
-            >
-              Community&emsp;
-              <FontAwesomeIcon icon={faAngleRight} />
-            </MobileNavItem>
-          </Item>
-        </MobileNavig>
-
-        <Navig>
-          {navig.map((item) => {
-            return (
-              //Uncomment whenever the links are ready
-              <Item>
-                <NavigationItem
-                  isFocused={isFocused === item.id}
-                  onMouseEnter={() => setIsFocused(item.id)}
-                  onMouseLeave={() => setIsFocused()}
-                  onClick={() => setActiveHeader(item.id)}
-                >
-                  {navig[item.id].label}
-                </NavigationItem>
-              </Item>
-            )
-          })}
-          <Item>
-            <NavigationItem>
-              <Searching
-                isSearching={!isSearching}
-                searchBar={!searchBar}
-                onMouseEnter={() => setIsSearching(true)}
-                onMouseLeave={() => setIsSearching(false)}
-                onClick={() => setSearchBar(!searchBar)}
-              >
-                <FontAwesomeIcon icon={faSearch} />
-              </Searching>
-            </NavigationItem>
-          </Item>
-          <Button isRegular>
-            <strong>Post</strong>
-          </Button>
-        </Navig>
         <SearchBar isActive={searchBar} placeholder="Search Here" />
       </Container>
 
@@ -189,46 +64,6 @@ export const Navbar = () => {
 // const Test = (props) => {
 //   return <div>clicked: {props.setIsOpen}</div>
 // }
-
-export const MobileNavig = styled.div`
-  display: ${(props) => (props.isActive ? 'block' : 'none')};
-  background: white;
-  width: 100%;
-`
-
-export const MobileNavItem = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.2s all;
-  background: inherit;
-  box-shadow: ${(props) =>
-    props.isFocused > 0 ? '0 1px 5px rgba(10, 10, 10, 0.8)' : 'none'};
-  color: ${(props) => (props.isFocused > 0 ? 'red' : 'black')};
-  width: 100%;
-  height: 3.5rem;
-  border: none;
-  &:focus {
-    outline: none;
-  }
-  margin: 0 0rem;
-  padding: 0;
-  border-top: 1px solid #ccc;
-  ${(props) =>
-    props.isExtended &&
-    `
-    height: 3rem;
-    width: 97%;
-    margin: auto;
-    background: #fee;
-  `}
-`
-
-// Need to add expand containers for all the menu items
-export const CategoriesExpand = styled.div`
-  display: ${(props) => (props.isActive == 1 ? 'block' : 'none')};
-  background: inherit;
-`
 
 export const Container = styled.div`
   @media (max-width: 768px) {
@@ -289,7 +124,7 @@ export const Item = styled.li`
 `
 
 export const NavigationItem = styled.button`
-  background-color: ${(props) => (props.isFocused ? '#eee' : 'inherit')};
+  background-color: inherit;
   color: ${(props) => (props.isFocused ? 'red' : 'black')};
   border: none;
   outline: none;
@@ -382,6 +217,9 @@ export const Header = styled.div`
   margin-top: 5rem;
   padding: 50px;
   text-align: center;
+  @media (max-width: 968px) {
+    margin: 0;
+  }
 `
 export const Description = styled.div`
   font-size: 24px;
