@@ -15,71 +15,58 @@ const MobileFooterData = [
   "Guidelines"
 ]
 
-const DataMobile = [
-   "200",
-   "111",
-   "11"
+const DataMobile = {
+  total: "15,511",
+  span: "Job Posted",
+  copy: " Copyright © 2020 "
 
-]
-
+}
 
   export const MobileFooter = ({data}) => {
     return (
   <Container>
 
-          <br />
-          <br />
+         
           {MobileFooterData.map((element) => (
             <>
 
             <AnchorMobile>{element}</AnchorMobile>
-      
-            <br />
+    
+    <br/>
             </>
           ))}
+
+          <br/>
+          <br/>
   
-  
-          <br />
-          <br />
           <HTotal>{DataMobile.total}</HTotal>
-          <span>{DataMobile.span}</span>
+          <Span>{DataMobile.span}</Span>
+
+
+          <br/>
+          <br/>
+          <br/>
 
           <LiMobile>{DataMobile.copy}</LiMobile>
         </Container>
     )}
 
 const AnchorMobile = styled.span`
-
-`
-
-
-  const FooterContainer = styled.div`
-text-size-adjust: 100%;
-color: #9b9b9b;
-background: #212529;
-overflow: hidden;
-width: 100vw;
-flex-direction: column;
-
-
-  @media (max-width: 600px) {
-    text-align: center;
-  }
+text-align: center;
+cursor: pointer;
+color: #f8f9fa;
+line-height: 30px;
+font-size: 1.2em;
 `;
 
+const LiMobile = styled.span`
+color: #fff;
+font-size: 1rem;
 
-const LiMobile = styled.div`
-  padding-top: 40px;
-  color: #fff;
-  font-size: 1rem;
 `;
 
 const Container = styled.div`
-  font-size: 16px;
-  color: #ffffff;
-  font-family: 'Neufile Grotesk Regular', sans-serif;
-
-
+  
   @media (min-width: 768px) {
     display: none;
   }
@@ -87,143 +74,11 @@ const Container = styled.div`
 
 const HTotal = styled.span`
   margin-right: 10px;
-`;
-
-const FooterTop = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-
-  @media (max-width: 600px) {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-  }
-`;
-
-const Anchor = styled.div`
-  cursor: pointer;
-  color: #f03e3e;
-  margin-top: 4px;
-  line-height: 2.5;
-  font-size: 16px;
-
-  &:hover {
-    opacity: 0.7;
-  }
-
-  @media (max-width: 600px) {
-    text-align: center;
-    padding-right: 40px;
-  }
-`;
-
-const Number = styled.div`
-  text-align: right;
-  font-family: 'Neufile Grotesk Semi Bold', sans-serif;
-  font-weight: 500;
-  font-size: 2rem;
+  font-size: 1rem;    
   color: #f8f9fa;
-
-  @media (max-width: 600px) {
-    display: none;
-  }
-`
-
-const Job = styled.div`
-  text-align: right;
-  color: #f8f9fa;
-  letter-spacing: 1px;
-  font-size: 1.1em;
- 
-
-  @media (max-width: 600px) {
-    display: none;
-  }
-`
-
-const Button = styled.button`
-  background-color: #f03e3e;
-  color: #ffffff;
-  border: none;
-  padding: 15px 32px;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  outline: none;
-  text-align: center;
-  
-
-  &:hover {
-    opacity: 0.7;
-
-  }
-  
-
-  @media (max-width: 600px) {
-    display: none;
-  }
-`
-
-const Bottom = styled.h1`
-  text-align: right;
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 15px;
-
-  @media (max-width: 600px) {
-    display: none;
-  }
 `;
-
 
 const Span = styled.span`
-  font-family: 'Neufile Grotesk Regular', sans-serif;
-  color: #f8f9fa;
-  padding: 10px;
-
-  @media (max-width: 600px) {
-    display: none;
-  }
-`;
-
-const BannerResources = styled.div`
-  font-family: 'Neufile Grotesk Regular', sans-serif;
-  font-size: 30px;
-  display: block;
-  background:  #FFFAFA;
-  top: 235px;
-  padding-right: 10px;
-  width: 110%;
-  
-
-  @media (max-width: 600px) {
-    display: none;
-  }
-`;
-
-const Banner = styled.div`
-display: flex;
-justify-content: center;
-
-  @media (max-width: 600px) {
-    display: none;
-  }
-`;
-
-const Anchor2 = styled.div`
-  cursor: pointer;
-  font-size: 10px;
-  color: #000000;
-
-  &:hover {
-    opacity: 0.7;
-  }
-
-  @media (max-width: 600px) {
-    display: none;
-  }
+color: #f8f9fa;
+font-size: 1rem;
 `;

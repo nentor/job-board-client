@@ -133,14 +133,6 @@ const FooterLeft = styled.div`
   flex-basis: 50%;
 `;
 
-const AnchorMobile = styled.a`
-  text-align: center;
-  cursor: pointer;
-  color: #f8f9fa;
-  line-height: 30px;
-  font-size: 1.2em;
-`;
-
 
 
 const FooterTop = styled.div`

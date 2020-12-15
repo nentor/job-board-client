@@ -44,11 +44,14 @@ export const Footer = ({data}) => {
 <div>
 <FooterContainer>
   <DesktopFooter data ={ResourcesBannerData , BannerResourcesData}/>
-</FooterContainer>
 
-<MobileFooter>
+  <MobileFooter>
   <MobileFooter data={MobileFooterData}/>
 </MobileFooter>
+
+</FooterContainer>
+
+
 
 </div>
  )
@@ -65,10 +68,10 @@ overflow: hidden;
 width: 100vw;
 flex-direction: column;
 
-
-  @media (max-width: 600px) {
-    text-align: center;
-  }
+@media (max-width: 600px) {
+  text-align: center;
+  padding-bottom: 10px;
+}
 `;
 
 
