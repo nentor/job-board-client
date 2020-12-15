@@ -75,7 +75,7 @@ export const CreateJob = () => {
             <Margin left={4}>
               <RadioGroup
                 title="Job Type"
-                choices={[{ value: 'Full Name' }, { value: 'Contract' }]}
+                choices={[{ value: 'Full-Time' }, { value: 'Contract' }]}
                 isRequired={true}
               />
             </Margin>
