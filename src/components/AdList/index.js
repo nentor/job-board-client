@@ -117,13 +117,11 @@ const ListContainer = styled.div`
 `
 
 const Post = styled.ul`
-  list-style: none;
   display: list-item;
   margin-bottom: 8px;
   position: relative;
   padding: 18px 10px 18px 10px;
   border: none;
-  border-radius: 1px;
   background-color: rgba(0, 170, 255, 0.2);
 
   @media only screen and (max-device-width: 480px) {
@@ -206,6 +204,7 @@ const New = styled.span`
   left: 842px;
   position: absolute;
   float: right;
+  border-radius: 3px;
 
   @media only screen and (max-width: 480px) {
     font-size: 1rem;
@@ -222,19 +221,16 @@ const Highlight = styled.span`
   border-radius: 4px;
   top: 8px;
   left: 930px;
+  float: right;
   position: absolute;
   height: 88px;
   border-left: 4px solid rgb(0, 170, 255);
 
   @media only screen and (max-width: 1175px) {
-    float: right;
-    position: absolute;
     left: 920px;
   }
 
   @media only screen and (max-width: 480px) {
-    float: right;
-    position: absolute;
     left: 305px;
     height: 112px;
   }
