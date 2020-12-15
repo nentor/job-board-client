@@ -49,6 +49,7 @@ const DataMobile = [
     )}
 
 const AnchorMobile = styled.span`
+
 `
 
 
