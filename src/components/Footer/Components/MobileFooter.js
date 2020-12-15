@@ -2,25 +2,10 @@ import React from 'react'
 import { worker } from 'shortid'
 import styled from 'styled-components'
 
-const MobileFooterData = [
-    "Top 100 Companies",
-    "All Remote Companies",
-    "WWR FAQ",
-    "Newsletter",
-    "Blog",
-    "Learning Portal",
-    "Forum",
-    "RSS",
-    "Terms",
-    "Privacy",
-    "Guidelines"
-  ]
+{data.elements.map}
+{data.total.map}
+{data.copy.map}
 
-  const DataMobile = {
-    total: "15,293",
-    copy: "Copyright © 2020",
-    span: "Remote jobs posted"
-  }
 
   export const MobileFooter = ({data}) => {
   <MobileFooter>
@@ -34,8 +19,8 @@ const MobileFooterData = [
             <br />
             </>
           ))}
-    
-    
+  
+  
           <br />
           <br />
           <HTotal>{DataMobile.total}</HTotal>

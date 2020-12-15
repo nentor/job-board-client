@@ -5,26 +5,7 @@ import styled from 'styled-components'
 
 export const DesktopFooter = ({data}) => {
 
-    const ResourcesBannerData = [
-        "Top 100 Companies",
-          "All Remote Companies",
-          "WWR FAQ",
-          "Newsletter",
-          "Blog",
-          "Learning Portal",
-          "Forum",
-          "RSS",
-        ]
-      
-        const BannerResourcesData = [
-          "Copyright © 2020",
-          "Terms",
-          "Privacy",
-          "Guidelines"
-        ]
-      
-
-
+  
     return (
         <FooterContainer>
         <FooterTop>
