@@ -1,10 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const MobileFooterData = [
+  "Top 100 Companies",
+  "All Remote Companies",
+  "WWR FAQ",
+  "Newsletter",
+  "Blog",
+  "Learning Portal",
+  "Forum",
+  "RSS",
+  "Terms",
+  "Privacy",
+  "Guidelines"
+]
+
+const DataMobile = [
+   "200",
+   "111",
+   "11"
+
+]
 
 
   export const MobileFooter = ({data}) => {
+    return (
   <Container>
+
           <br />
           <br />
           {MobileFooterData.map((element) => (
@@ -24,7 +46,10 @@ import styled from 'styled-components'
 
           <LiMobile>{DataMobile.copy}</LiMobile>
         </Container>
-  }
+    )}
+
+const AnchorMobile = styled.span`
+`
 
 
   const FooterContainer = styled.div`
@@ -48,7 +73,7 @@ const LiMobile = styled.div`
   font-size: 1rem;
 `;
 
-const MobileFooter = styled.div`
+const Container = styled.div`
   font-size: 16px;
   color: #ffffff;
   font-family: 'Neufile Grotesk Regular', sans-serif;

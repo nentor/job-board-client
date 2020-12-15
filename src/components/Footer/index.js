@@ -37,17 +37,17 @@ export const Footer = ({data}) => {
       "Guidelines"
     ]
 
-
+  
 
 
   return (
 <div>
 <FooterContainer>
-  <DesktopFooter/>
+  <DesktopFooter data ={ResourcesBannerData , BannerResourcesData}/>
 </FooterContainer>
 
 <MobileFooter>
-  <MobileFooter data={mobileFooterData}/>
+  <MobileFooter data={MobileFooterData}/>
 </MobileFooter>
 
 </div>
@@ -70,4 +70,5 @@ flex-direction: column;
     text-align: center;
   }
 `;
+
 

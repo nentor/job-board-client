@@ -1,6 +1,34 @@
 import React from 'react'
+import { worker } from 'shortid'
 import styled from 'styled-components'
 
+const ResourcesBannerData = [
+  "Top 100 Companies",
+    "All Remote Companies",
+    "WWR FAQ",
+    "Newsletter",
+    "Blog",
+    "Learning Portal",
+    "Forum",
+    "RSS",
+  ]
+
+  const BannerResourcesData = [
+    "Copyright © 2020",
+    "Terms",
+    "Privacy",
+    "Guidelines"
+  ]
+
+const footer = {
+  name: "We work remotely",
+  anchor: "Get in touch",
+  number: "19 000",
+  job: "Remote jobs posted",
+  button: "Post a job",
+  bottom: "Back to top ↑"
+
+}
 
 export const DesktopFooter = ({data}) => {
 
@@ -9,7 +37,7 @@ export const DesktopFooter = ({data}) => {
         <FooterContainer>
         <FooterTop>
         <FooterLeft>
-          <Work>{Data.work}</Work>
+          <Work>{footer.name}</Work>
 
           <br />
           <br />
@@ -18,24 +46,24 @@ export const DesktopFooter = ({data}) => {
             We strongly encourage employers to embrace diversity, equity, and
             inclusion as fundamental values when hiring through We Work
             Remotely.
-            <Anchor>{Data.anchor}</Anchor>
+            <Anchor>{footer.anchor}</Anchor>
           </Text>
         </FooterLeft>
 
         <FooterRight>
-          <Number>{Data.number}</Number>
+          <Number>{footer.number}</Number>
 
-          <Job>{Data.job}</Job>
+          <Job>{footer.job}</Job>
 
           <br />
 
-          <Button>{Data.button}</Button>
+          <Button>{footer.button}</Button>
 
           <br />
           <br />
 
           <Bottom>
-            {Data.bottom}
+            {footer.bottom}
             <br />
           </Bottom>
         </FooterRight>
@@ -210,7 +238,7 @@ const Button = styled.button`
   @media (max-width: 600px) {
     display: none;
   }
-`
+`;
 
 const Bottom = styled.h1`
   text-align: right;
