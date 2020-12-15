@@ -23,7 +23,7 @@ export const MobileNav = () => {
       {isVisible && (
         <>
           <Container isActive={isVisible}>
-            <SearchBar placeholder="Search Here..." />
+            <Search placeholder="Search Here..." />
             <Item ref={expandedContainerRef} isMobile>
               <MobileNavItem onClick={() => setExpand(!expand)}>
                 Categories&emsp;
@@ -92,6 +92,9 @@ export const Logo = styled.img`
   width: 50px;
   margin-right: auto;
   float: left;
+  @media (min-width: 968px) {
+    display: none;
+  }
 `
 
 export const MobileNavig = styled.div`
@@ -135,7 +138,7 @@ export const CategoriesExpand = styled.div`
   background: inherit;
 `
 
-export const SearchBar = styled.input`
+export const Search = styled.input`
   position: relative;
   font-size: 20px;
   width: 93%;
