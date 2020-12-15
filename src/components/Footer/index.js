@@ -1,5 +1,4 @@
 import React from 'react'
-import { worker } from 'shortid'
 import styled from 'styled-components'
 import {DesktopFooter} from './Components'
 import {MobileFooter} from './Components'
@@ -38,10 +37,7 @@ export const Footer = ({data}) => {
       "Guidelines"
     ]
 
-    const mobileFooterData = {
-      elements: ["123", "456"],
-      total, copy
-      }
+
 
 
   return (
