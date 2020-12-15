@@ -118,12 +118,12 @@ const New = styled.span`
 
   @media only screen and (max-width: 480px) {
     font-size: 1rem;
-    left: 250px !important;
+    left: calc(100% - 25%) !important;
     margin-top: 12px;
   }
 
-  media only screen and (max-width: 1175px) {
-    left: 800px;
+  @media only screen and (max-width: 1175px) {
+    left: calc(100% - 10%);
   }
 `
 
@@ -137,11 +137,11 @@ const Highlight = styled.span`
   border-left: 4px solid rgb(0, 170, 255);
 
   @media only screen and (max-width: 1175px) {
-    left: 920px;
+    left: calc(100% - 1%);
   }
 
   @media only screen and (max-width: 480px) {
-    left: 305px;
+    left: calc(100% - 5%);
     height: 112px;
   }
 `
