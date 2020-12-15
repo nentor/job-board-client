@@ -155,12 +155,13 @@ const DataMobile = {
 export default Footer
 
 const FooterContainer = styled.div`
-  text-size-adjust: 100%;
-  color: #9b9b9b;
-  background: #212529;
-  overflow: hidden;
-  width: 100vw;
-  flex-direction: column;
+text-size-adjust: 100%;
+color: #9b9b9b;
+background: #212529;
+overflow: hidden;
+width: 100vw;
+flex-direction: column;
+
 
   @media (max-width: 600px) {
     text-align: center;
@@ -276,7 +277,6 @@ const Button = styled.button`
   color: #ffffff;
   border: none;
   padding: 15px 32px;
-  text-align: center;
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
@@ -285,6 +285,8 @@ const Button = styled.button`
   flex-direction: row;
   justify-content: center;
   outline: none;
+  text-align: center;
+  
 
   &:hover {
     opacity: 0.7;
@@ -322,9 +324,9 @@ const ResourcesBanner = styled.div`
   text-size-adjust: 100%;
   margin-top: 41px;
   box-shadow: 0px 0px 2px;
-  z-index: 10;
   top: 234px;
   background: #4d5154;
+  
 `;
 
 
