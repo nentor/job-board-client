@@ -17,11 +17,17 @@ import {
 } from './Components'
 
 const Reset = createGlobalStyle`
-  * {
+  *,
+  *::before,
+  *::after {
     padding: 0;
     margin: 0;
 
     box-sizing: border-box;
+  }
+
+  html {
+    font-size: 62.5%;
   }
 `
 
@@ -31,13 +37,13 @@ export const CreateJob = () => {
       <Reset />
       <NewListing>
         <Flex justifyBetween alignCenter>
-          <FlexItem>
+          <FlexItem grow shrink>
             <Title>First, tell us about the position</Title>
           </FlexItem>
-          <FlexItem>
-            <p>
+          <FlexItem grow shrink>
+            <span className="requiredFields">
               Required Fields <RequiredCircle />
-            </p>
+            </span>
           </FlexItem>
         </Flex>
 
@@ -48,7 +54,7 @@ export const CreateJob = () => {
         />
 
         <Flex>
-          <FlexItem>
+          <FlexItem basis="50%" shrink grow>
             <SelectGroup
               title="Category"
               isRequired={true}
@@ -65,7 +71,7 @@ export const CreateJob = () => {
               ]}
             />
           </FlexItem>
-          <FlexItem>
+          <FlexItem basis="50%" shrink grow>
             <Margin left={4}>
               <RadioGroup
                 title="Job Type"
@@ -75,15 +81,16 @@ export const CreateJob = () => {
             </Margin>
           </FlexItem>
         </Flex>
+
         <Flex>
-          <FlexItem>
+          <FlexItem basis="50%" shrink grow>
             <InputGroup
               title="Company HQ"
               inputText="Example: “Chicago, IL”,   “Stockholm, Sweden”"
               isRequired={true}
             />
           </FlexItem>
-          <FlexItem>
+          <FlexItem basis="50%" shrink grow>
             <Margin left={4}>
               <SelectGroup
                 title="Regional Restrictions"
@@ -142,14 +149,14 @@ export const CreateJob = () => {
         />
 
         <Flex>
-          <FlexItem>
+          <FlexItem basis="50%">
             <InputGroup
               title="Company's Website URL"
               isRequired={true}
               inputText="Example: https://mybusiness.com/"
             />
           </FlexItem>
-          <FlexItem>
+          <FlexItem basis="50%">
             <Margin left={4}>
               <InputGroup
                 title="Email"

@@ -4,10 +4,9 @@ import styled from 'styled-components'
 import { Container, RequiredCircle, ListingTitle } from '../index'
 
 const Select = styled.select`
-  font-size: 0.8em;
+  font-size: 1.408rem;
   outline: none;
-  width: 435px;
-  height: 60px;
+  height: 6rem;
   border: 1.5px solid rgba(144, 146, 148, 0.2);
 `
 

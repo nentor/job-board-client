@@ -4,9 +4,9 @@ import styled from 'styled-components'
 const Label = styled.label`
   font-weight: 900;
   color: #212529;
-  font-size: 1.1rem;
+  font-size: 1.76rem;
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 0.6rem;
 `
 
 export const ListingTitle = ({ name, children }) => {

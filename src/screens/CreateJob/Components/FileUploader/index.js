@@ -7,14 +7,14 @@ const InputFileUpload = styled.input.attrs({
   type: 'file',
 })`
   opacity: 0;
-  height: 140px;
-  width: 882px;
+  /* min-height: 14rem; */
+  /* min-width: 88.2rem; */
   cursor: pointer;
 `
 
 const InputFileUploadWrapper = styled.div`
   font-size: 0.95rem;
-  padding: 16px 12px 16px 12px;
+  padding: 1.6rem 1.2rem 1.6rem 1.2rem;
   cursor: auto;
   border-color: rgba(144, 146, 148, 0.2);
   border-style: solid;

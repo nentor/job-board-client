@@ -11,12 +11,16 @@ const RadioButton = styled.input.attrs({
 
 const RadioGroupWrapper = styled.div`
   display: flex;
+  font-size: 1.76rem;
+  margin-top: 1.4rem;
 
   & div {
-    padding-right: 30px;
-
     display: flex;
     align-items: center;
+
+    &:not(:last-child) {
+      padding-right: 3rem;
+    }
   }
 `
 

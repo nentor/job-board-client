@@ -6,11 +6,11 @@ export const RequiredCircle = styled.span`
     content: '';
     background: #f03e3e;
     display: inline-block;
-    width: 9px;
-    height: 9px;
+    width: 0.9rem;
+    height: 0.9rem;
     border-radius: 50%;
     position: relative;
-    top: -2px;
-    left: 4px;
+    top: -0.2rem;
+    left: 0.4rem;
   }
 `

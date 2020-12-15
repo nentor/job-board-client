@@ -5,8 +5,8 @@ const Btn = styled.button`
   background-color: #f03e3e;
   color: white;
   text-decoration: none;
-  font-size: 1em;
-  padding: 16px 30px 16px 30px;
+  font-size: 1.5rem;
+  padding: 1.6rem 3rem 1.6rem 3rem;
   border-radius: 2px;
   border-color: transparent;
   display: inline-block;

@@ -4,11 +4,10 @@ import styled from 'styled-components'
 import { RequiredCircle, Container, ListingTitle } from '../index'
 
 const Input = styled.input`
-  max-width: 890px;
-  width: 890px;
   margin: 0 0 3px;
-  font-size: 0.95rem;
-  padding: 16px 12px 16px 12px;
+  /* font-size: 1.52rem; */
+  padding: 1.6rem 1.2rem 1.6rem 1.2rem;
+  height: 5.7rem;
   cursor: auto;
   border-color: rgba(144, 146, 148, 0.2);
   border-style: solid;
