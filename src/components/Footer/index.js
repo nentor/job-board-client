@@ -6,6 +6,43 @@ import {MobileFooter} from './Components'
 
 export const Footer = ({data}) => {
 
+  const ResourcesBannerData = [
+    "Top 100 Companies",
+      "All Remote Companies",
+      "WWR FAQ",
+      "Newsletter",
+      "Blog",
+      "Learning Portal",
+      "Forum",
+      "RSS",
+    ]
+  
+    const BannerResourcesData = [
+      "Copyright © 2020",
+      "Terms",
+      "Privacy",
+      "Guidelines"
+    ]
+  
+    const MobileFooterData = [
+      "Top 100 Companies",
+      "All Remote Companies",
+      "WWR FAQ",
+      "Newsletter",
+      "Blog",
+      "Learning Portal",
+      "Forum",
+      "RSS",
+      "Terms",
+      "Privacy",
+      "Guidelines"
+    ]
+
+    const mobileFooterData = {
+      elements: ["123", "456"],
+      total, copy
+      }
+
 
   return (
 <div>
@@ -14,7 +51,7 @@ export const Footer = ({data}) => {
 </FooterContainer>
 
 <MobileFooter>
-  <MobileFooter/>
+  <MobileFooter data={mobileFooterData}/>
 </MobileFooter>
 
 </div>
