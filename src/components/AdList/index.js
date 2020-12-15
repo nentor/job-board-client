@@ -55,32 +55,34 @@ const mockData = [
 export const AdList = () => {
   return (
     <ListContainer>
-      <List>
-        {mockData.map((adPost) => {
-          return (
-            <Post>
-              {adPost.isNew ? (
-                <>
-                  <New>New</New>
-                  <Highlight />
-                </>
-              ) : (
-                <></>
-              )}
-              <Tooltip>
-                <Img />
-              </Tooltip>
-              <PostUrl>
-                <Span>{adPost.user}</Span>
-                <br />
-                <Title>{adPost.title}</Title>
-                <br />
-                <Span>{adPost.city}</Span>
-              </PostUrl>
-            </Post>
-          )
-        })}
-      </List>
+      <Article>
+        <List>
+          {mockData.map((adPost) => {
+            return (
+              <Post>
+                {adPost.isNew ? (
+                  <>
+                    <New>New</New>
+                    <Highlight />
+                  </>
+                ) : (
+                  <></>
+                )}
+                <Tooltip>
+                  <Img />
+                </Tooltip>
+                <PostUrl>
+                  <Span>{adPost.user}</Span>
+                  <br />
+                  <Title>{adPost.title}</Title>
+                  <br />
+                  <Span>{adPost.city}</Span>
+                </PostUrl>
+              </Post>
+            )
+          })}
+        </List>
+      </Article>
     </ListContainer>
   )
 }
@@ -91,9 +93,27 @@ const List = styled.ul`
   padding: 0;
 `
 
+const Article = styled.article`
+  clear: both;
+  margin-bottom: 50px;
+  text-size-adjust: 100%;
+`
+
 const ListContainer = styled.div`
   margin: 0 auto;
   max-width: 950px;
+
+  @media only screen and (max-device-width: 480px) {
+    width: auto;
+  }
+
+  @media only screen and (max-device-width: 1024px) {
+    max-width: 900px;
+  }
+
+  @media only screen and (max-device-width: 480px) {
+    padding: 10px 30px;
+  }
 `
 
 const Post = styled.ul`
@@ -103,12 +123,25 @@ const Post = styled.ul`
   position: relative;
   padding: 18px 10px 18px 10px;
   border: none;
+  border-radius: 1px;
   background-color: rgba(0, 170, 255, 0.2);
+
+  @media only screen and (max-device-width: 480px) {
+    padding: 30px 10px;
+  }
 `
 
 const Tooltip = styled.div`
   position: absolute;
   display: inline-block;
+
+  @media only screen and (max-device-width: 1024px) {
+    display: none;
+  }
+
+  @media only screen and (max-device-width: 480px) {
+    display: none;
+  }
 `
 const Img = styled.div`
   background-image: url('https://we-work-remotely.imgix.net/logos/0017/0021/logo.gif?ixlib=rails-4.0.0&w=50&h=50&dpr=2&fit=fill&auto=compress');
@@ -133,20 +166,20 @@ const PostUrl = styled.a`
 const Span = styled.span`
   cursor: pointer;
   font-size: 1rem;
-  margin-left: 42px;
+  margin-left: 25px;
   vertical-align: middle;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   display: inline-block;
-  max-width: calc(100% - 375px);
+  max-width: calc(100% - 25px);
   text-decoration: none;
   color: black;
 `
 
 const Title = styled.span`
   cursor: pointer;
-  margin-left: 42px;
+  margin-left: 25px;
   margin-top: 8px;
   margin-bottom: 8px;
   margin-right: 10px;
@@ -155,7 +188,7 @@ const Title = styled.span`
   text-overflow: ellipsis;
   white-space: nowrap;
   display: inline-block;
-  max-width: calc(100% - 375px);
+  max-width: calc(100% - 25px);
   text-decoration: none;
   color: black;
   font-weight: bold;
@@ -173,13 +206,36 @@ const New = styled.span`
   left: 842px;
   position: absolute;
   float: right;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 1rem;
+    left: 250px !important;
+    margin-top: 12px;
+  }
+
+  media only screen and (max-width: 1175px) {
+    left: 800px;
+  }
 `
 
 const Highlight = styled.span`
   border-radius: 4px;
   top: 8px;
-  left: 937px;
+  left: 930px;
   position: absolute;
   height: 88px;
   border-left: 4px solid rgb(0, 170, 255);
+
+  @media only screen and (max-width: 1175px) {
+    float: right;
+    position: absolute;
+    left: 920px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    float: right;
+    position: absolute;
+    left: 305px;
+    height: 112px;
+  }
 `
