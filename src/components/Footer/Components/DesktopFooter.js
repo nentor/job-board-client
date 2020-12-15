@@ -1,5 +1,4 @@
 import React from 'react'
-import { worker } from 'shortid'
 import styled from 'styled-components'
 
 

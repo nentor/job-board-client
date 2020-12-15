@@ -1,14 +1,10 @@
 import React from 'react'
-import { worker } from 'shortid'
 import styled from 'styled-components'
 
-{data.elements.map}
-{data.total.map}
-{data.copy.map}
 
 
   export const MobileFooter = ({data}) => {
-  <MobileFooter>
+  <Container>
           <br />
           <br />
           {MobileFooterData.map((element) => (
@@ -27,7 +23,7 @@ import styled from 'styled-components'
           <span>{DataMobile.span}</span>
 
           <LiMobile>{DataMobile.copy}</LiMobile>
-        </MobileFooter>
+        </Container>
   }
 
 
