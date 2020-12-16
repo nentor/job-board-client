@@ -19,7 +19,9 @@
     "react-query": "^2.23.1",
     "react-query-devtools": "^2.5.1",
     "shortid": "^2.2.15",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "styled-components-spacing": "^3.1.1",
+    "styled-flex-component": "^3.0.5"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
