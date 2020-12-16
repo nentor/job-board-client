@@ -37,10 +37,10 @@ export const CreateJob = () => {
       <Reset />
       <NewListing>
         <Flex justifyBetween alignCenter>
-          <FlexItem grow shrink>
+          <FlexItem>
             <Title>First, tell us about the position</Title>
           </FlexItem>
-          <FlexItem grow shrink>
+          <FlexItem>
             <span className="requiredFields">
               Required Fields <RequiredCircle />
             </span>
@@ -54,7 +54,7 @@ export const CreateJob = () => {
         />
 
         <Flex>
-          <FlexItem basis="50%" shrink grow>
+          <FlexItem basis="50%">
             <SelectGroup
               title="Category"
               isRequired={true}
@@ -71,7 +71,7 @@ export const CreateJob = () => {
               ]}
             />
           </FlexItem>
-          <FlexItem basis="50%" shrink grow>
+          <FlexItem basis="50%">
             <Margin left={4}>
               <RadioGroup
                 title="Job Type"
@@ -83,14 +83,14 @@ export const CreateJob = () => {
         </Flex>
 
         <Flex>
-          <FlexItem basis="50%" shrink grow>
+          <FlexItem basis="50%">
             <InputGroup
               title="Company HQ"
               inputText="Example: “Chicago, IL”,   “Stockholm, Sweden”"
               isRequired={true}
             />
           </FlexItem>
-          <FlexItem basis="50%" shrink grow>
+          <FlexItem basis="50%">
             <Margin left={4}>
               <SelectGroup
                 title="Regional Restrictions"
