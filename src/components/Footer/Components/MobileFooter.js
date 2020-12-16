@@ -51,7 +51,7 @@ const DataMobile = {
         </Container>
     )}
 
-const AnchorMobile = styled.span`
+const AnchorMobile = styled.a`
 text-align: center;
 cursor: pointer;
 color: #f8f9fa;
@@ -59,7 +59,7 @@ line-height: 30px;
 font-size: 1.2em;
 `;
 
-const LiMobile = styled.span`
+const LiMobile = styled.a`
 color: #fff;
 font-size: 1rem;
 
@@ -72,13 +72,13 @@ const Container = styled.div`
   }
 `;
 
-const HTotal = styled.span`
+const HTotal = styled.b`
   margin-right: 10px;
   font-size: 1rem;    
   color: #f8f9fa;
 `;
 
-const Span = styled.span`
+const Span = styled.b`
 color: #f8f9fa;
 font-size: 1rem;
 `;
