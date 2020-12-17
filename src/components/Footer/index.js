@@ -48,6 +48,15 @@ export const Footer = ({data}) => {
     }
 
 
+  
+const DataMobile = {
+  total: "15,511",
+  span: "Job Posted",
+  copy: " Copyright © 2020 "
+
+}
+
+
   return (
 <div>
 <FooterContainer>
@@ -55,8 +64,8 @@ export const Footer = ({data}) => {
 footerData = {footerData}/>
 
 
-  <MobileFooter>
-  <MobileFooter data={MobileFooterData}/>
+  <MobileFooter MobileFooterData = {MobileFooterData} 
+  DataMobile = {DataMobile}>
 </MobileFooter>
 
 </FooterContainer>
@@ -65,8 +74,7 @@ footerData = {footerData}/>
 
 </div>
  )
- 
-}
+ }
 
 export default Footer
 

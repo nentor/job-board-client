@@ -1,40 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const MobileFooterData = [
-  "Top 100 Companies",
-  "All Remote Companies",
-  "WWR FAQ",
-  "Newsletter",
-  "Blog",
-  "Learning Portal",
-  "Forum",
-  "RSS",
-  "Terms",
-  "Privacy",
-  "Guidelines"
-]
 
-const DataMobile = {
-  total: "15,511",
-  span: "Job Posted",
-  copy: " Copyright © 2020 "
 
-}
 
-  export const MobileFooter = ({data}) => {
+
+  export const MobileFooter = ({MobileFooterData , DataMobile}) => {
     return (
   <Container>
 
-         
-          {MobileFooterData.map((element) => (
+   {MobileFooterData.map((element) => (
             <>
 
             <AnchorMobile>{element}</AnchorMobile>
     
-    <br/>
+      <br/>
             </>
           ))}
+
 
           <br/>
           <br/>
