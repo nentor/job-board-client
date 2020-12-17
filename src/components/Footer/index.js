@@ -37,13 +37,23 @@ export const Footer = ({data}) => {
       "Guidelines"
     ]
 
-  
+    const footerData = {
+      name: "We work remotely",
+      anchor: "Get in touch",
+      number: "19 000",
+      job: "Remote jobs posted",
+      button: "Post a job",
+      bottom: "Back to top ↑" ,
+      text: "We strongly encourage employers to embrace diversity, equity, and inclusion as fundamental values when hiring through We Work Remotely."
+    }
 
 
   return (
 <div>
 <FooterContainer>
-  <DesktopFooter data ={ResourcesBannerData , BannerResourcesData}/>
+<DesktopFooter ResourcesBannerData = {ResourcesBannerData}  BannerResourcesData = {BannerResourcesData } 
+footerData = {footerData}/>
+
 
   <MobileFooter>
   <MobileFooter data={MobileFooterData}/>

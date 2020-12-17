@@ -1,117 +1,89 @@
 import React from 'react'
-import { worker } from 'shortid'
 import styled from 'styled-components'
 
-const ResourcesBannerData = [
-  "Top 100 Companies",
-    "All Remote Companies",
-    "WWR FAQ",
-    "Newsletter",
-    "Blog",
-    "Learning Portal",
-    "Forum",
-    "RSS",
-  ]
-
-  const BannerResourcesData = [
-    "Copyright © 2020",
-    "Terms",
-    "Privacy",
-    "Guidelines"
-  ]
-
-const footer = {
-  name: "We work remotely",
-  anchor: "Get in touch",
-  number: "19 000",
-  job: "Remote jobs posted",
-  button: "Post a job",
-  bottom: "Back to top ↑"
-
-}
-
-export const DesktopFooter = ({data}) => {
 
   
+export const DesktopFooter = ({footerData , ResourcesBannerData , BannerResourcesData}) => { 
+ 
+
     return (
-        <FooterContainer>
-        <FooterTop>
-        <FooterLeft>
-          <Work>{footer.name}</Work>
+    
+      <FooterContainer>
+      <FooterTop>
+      <FooterLeft>
+        <Work>{footerData.name}</Work>
 
+        <br />
+        <br />
+
+        <Text>
+          {footerData.text}
+          <Anchor>{footerData.anchor}</Anchor>
+        </Text>
+      </FooterLeft>
+
+      <FooterRight>
+        <Number>{footerData.number}</Number>
+
+        <Job>{footerData.job}</Job>
+
+        <br />
+
+        <Button>{footerData.button}</Button>
+
+        <br />
+        <br />
+
+        <Bottom>
+          {footerData.bottom}
           <br />
-          <br />
+        </Bottom>
+      </FooterRight>
+    </FooterTop>
 
-          <Text>
-            We strongly encourage employers to embrace diversity, equity, and
-            inclusion as fundamental values when hiring through We Work
-            Remotely.
-            <Anchor>{footer.anchor}</Anchor>
-          </Text>
-        </FooterLeft>
-
-        <FooterRight>
-          <Number>{footer.number}</Number>
-
-          <Job>{footer.job}</Job>
-
-          <br />
-
-          <Button>{footer.button}</Button>
-
-          <br />
-          <br />
-
-          <Bottom>
-            {footer.bottom}
-            <br />
-          </Bottom>
-        </FooterRight>
-      </FooterTop>
-
-      <ResourcesBanner>
+    <ResourcesBanner>
 <Resources>
-  
-        <Ul>
-        <Li>
-              <Anchor1>
-            
-              {ResourcesBannerData.map((element) => (
-          <>
-         {element}
-         <Span>•</Span>
-         </>
-         
-          ))}
-  
-              </Anchor1>
-            </Li>
-          </Ul>
+
+      <Ul>
+      <Li>
+            <Anchor1>
+          
+            {ResourcesBannerData.map((element) => (
+        <>
+       {element}
+       <Span>•</Span>
+       </>
+       
+        ))}
+
+            </Anchor1>
+          </Li>
+        </Ul>
 
 </Resources>
-      </ResourcesBanner>
+    </ResourcesBanner>
 
-      <BannerResources>
-        <Banner>
-        <Ul1>
-        <Li1>
-              <Anchor2>
-            
-              {BannerResourcesData.map((element) => (
-          <>
-         {element}
-         <Span2>•</Span2>
-         </>
-          ))}
-              </Anchor2>
-            </Li1>
-          </Ul1>
-        </Banner>
-      </BannerResources>
+    <BannerResources>
+      <Banner>
+      <Ul1>
+      <Li1>
+            <Anchor2>
+          
+            {BannerResourcesData.map((element) => (
+        <>
+       {element}
+       <Span2>•</Span2>
+       </>
+        ))}
+            </Anchor2>
+          </Li1>
+        </Ul1>
+      </Banner>
+    </BannerResources>
+    </FooterContainer>
 
-      </FooterContainer>
-    )
-};
+   
+    )};
 
 
 const FooterContainer = styled.div`
