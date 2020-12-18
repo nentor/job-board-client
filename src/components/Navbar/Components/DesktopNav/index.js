@@ -61,7 +61,7 @@ export const DesktopNav = ({ showSearchBar, setActiveHeader, data }) => {
           </NavigationItem>
         </Item>
         <Button isRegular>
-          <strong>Post</strong>
+          <strong>Sign In</strong>
         </Button>
       </Container>
     </>

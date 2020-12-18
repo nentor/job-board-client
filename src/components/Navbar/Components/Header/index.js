@@ -8,7 +8,7 @@ export const Header = ({ isActive, data }) => {
       <Description>
         {data[isActive].description} <br />
         <Button>
-          <strong>Start Searching</strong>
+          <strong>Post an Ad</strong>
         </Button>
       </Description>
     </Container>
