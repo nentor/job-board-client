@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown, faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { useClickOutside } from '../../../../hooks'
 
 export const MobileNav = () => {
@@ -26,47 +26,38 @@ export const MobileNav = () => {
             <Search placeholder="Search Here..." />
             <Item ref={expandedContainerRef} isMobile>
               <MobileNavItem onClick={() => setExpand(!expand)}>
-                Categories&emsp;
-                <FontAwesomeIcon icon={faAngleDown} />
+                Categories
+                <FontAwesomeIcon icon={faPlus} />
               </MobileNavItem>
             </Item>
             <CategoriesExpand isActive={expand}>
               <Item isMobile>
-                <MobileNavItem isExtended>
-                  Mobiles&emsp;
-                  <FontAwesomeIcon icon={faAngleRight} />
-                </MobileNavItem>
+                <MobileNavItem isExtended>Mobiles</MobileNavItem>
               </Item>
               <Item isMobile>
-                <MobileNavItem isExtended>
-                  PC&emsp;
-                  <FontAwesomeIcon icon={faAngleRight} />
-                </MobileNavItem>
+                <MobileNavItem isExtended>PC</MobileNavItem>
               </Item>
               <Item isMobile>
-                <MobileNavItem isExtended>
-                  Laptops&emsp;
-                  <FontAwesomeIcon icon={faAngleRight} />
-                </MobileNavItem>
+                <MobileNavItem isExtended>Laptops</MobileNavItem>
               </Item>
             </CategoriesExpand>
 
             <Item isMobile>
               <MobileNavItem>
-                How to post an ad&emsp;
+                How to post an ad
                 <FontAwesomeIcon icon={faAngleRight} />
               </MobileNavItem>
             </Item>
 
             <Item isMobile>
               <MobileNavItem>
-                About us&emsp;
+                About us
                 <FontAwesomeIcon icon={faAngleRight} />
               </MobileNavItem>
             </Item>
             <Item isMobile>
               <MobileNavItem>
-                Community&emsp;
+                Community
                 <FontAwesomeIcon icon={faAngleRight} />
               </MobileNavItem>
             </Item>
@@ -106,7 +97,7 @@ export const MobileNavig = styled.div`
 export const MobileNavItem = styled.button`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   transition: 0.2s all;
   background: inherit;
   &:hover {
@@ -119,8 +110,9 @@ export const MobileNavItem = styled.button`
   &:focus {
     outline: none;
   }
-  margin: 0 0rem;
-  padding: 0;
+  margin: 0 5px;
+  padding: 5px 15px 5px 5px;
+
   border-top: 1px solid #ccc;
   ${(props) =>
     props.isExtended &&
@@ -128,7 +120,7 @@ export const MobileNavItem = styled.button`
     height: 3rem;
     width: 97%;
     margin: auto;
-    background: #fee;
+
   `}
 `
 
@@ -136,16 +128,18 @@ export const MobileNavItem = styled.button`
 export const CategoriesExpand = styled.div`
   display: ${(props) => (props.isActive == 1 ? 'block' : 'none')};
   background: inherit;
+  padding: 10px 0;
 `
 
 export const Search = styled.input`
   position: relative;
-  font-size: 20px;
+  font-size: 16px;
   width: 93%;
   margin: 1rem;
+  padding: 4px;
   height: auto;
   border: none;
-  box-shadow: 0 1px 5px rgba(10, 10, 10, 0.3);
+
   float: left;
   &:active {
     border: none;

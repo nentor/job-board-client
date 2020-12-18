@@ -18,6 +18,12 @@ export const Navbar = () => {
     },
     {
       id: 1,
+      label: 'Categories',
+      description: 'Choose a category',
+      href: '/categories',
+    },
+    {
+      id: 2,
       label: 'Contacts',
       description: 'How to reach us',
       href: '/contact',
