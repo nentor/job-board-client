@@ -1,12 +1,5 @@
 import React, { useState, useRef } from 'react'
-import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-import { useClickOutside } from '../../hooks'
-import { MobileNav } from './Components'
-import { DesktopNav } from './Components'
-import { SearchBar } from './Components'
-import { Header } from './Components'
+import { MobileNav, SearchBar, Header, DesktopNav } from './Components'
 
 export const Navbar = () => {
   const navig = [
