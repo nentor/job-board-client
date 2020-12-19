@@ -1,6 +1,6 @@
 export * from './Document'
 export * from './App'
-export * from './CreateJob'
+export * from './CreateAd'
 export * from './Footer'
 export * from './Navbar'
 export * from './AdList'

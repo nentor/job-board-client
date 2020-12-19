@@ -31,7 +31,7 @@ const Reset = createGlobalStyle`
   }
 `
 
-export const CreateJob = () => {
+export const CreateAd = () => {
   return (
     <>
       <Reset />
