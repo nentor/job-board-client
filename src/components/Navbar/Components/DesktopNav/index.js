@@ -157,8 +157,8 @@ export const Dropdown = styled.div`
   background: white;
   position: fixed;
   right: 280px;
-  top: 70px;
+  top: 60px;
   display: ${(props) => (props.isActive ? 'block' : 'none')};
 
-  box-shadow: 0px 1px 5px rgba(10, 10, 10, 0.8);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 `
