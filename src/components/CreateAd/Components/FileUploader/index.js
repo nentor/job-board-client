@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Container, ListingTitle, isRequired } from '../index'
+import { Container, ListingTitle, isRequired, RequiredCircle } from '../index'
 
 const InputFileUpload = styled.input.attrs({
   type: 'file',
