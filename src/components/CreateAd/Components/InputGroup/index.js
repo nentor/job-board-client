@@ -5,15 +5,12 @@ import { RequiredCircle, Container, ListingTitle } from '../index'
 
 const Input = styled.input`
   margin: 0 0 3px;
-  /* font-size: 1.52rem; */
   padding: 1.6rem 1.2rem 1.6rem 1.2rem;
   height: 5.7rem;
   cursor: auto;
-  border: 2px solid rgba(144, 146, 148, 0.2);
-  border-radius: 3px;
+  border: 3px solid rgba(144, 146, 148, 0.2);
+  outline: 2px none rgba(144, 146, 148, 0.2);
   background-color: #f8f9fa;
-  outline-width: 2px;
-  outline-color: rgba(144, 146, 148, 0.2);
 `
 
 export const InputGroup = ({ type, title, inputText, isRequired }) => {
