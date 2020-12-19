@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { useClickOutside } from '../../../../hooks'
+import { Search } from '../SearchBar'
 
 export const MobileNav = () => {
   const [expand, setExpand] = useState(false)
@@ -23,7 +24,7 @@ export const MobileNav = () => {
       {isVisible && (
         <>
           <Container isActive={isVisible}>
-            <Search placeholder="Search Here..." />
+            <Search isMobile placeholder="Search Here..." />
             <Item ref={expandedContainerRef} isMobile>
               <MobileNavItem onClick={() => setExpand(!expand)}>
                 Categories
@@ -131,26 +132,6 @@ export const CategoriesExpand = styled.div`
   padding: 10px 0;
 `
 
-export const Search = styled.input`
-  position: relative;
-  font-size: 16px;
-  width: 93%;
-  margin: 1rem;
-  padding: 4px;
-  height: auto;
-  border: none;
-
-  float: left;
-  &:active {
-    border: none;
-  }
-  &:focus {
-    outline: none;
-  }
-  ::placeholder {
-    color: #ddd;
-  }
-`
 export const Item = styled.li`
   padding: 0px;
   list-style: none;

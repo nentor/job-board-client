@@ -6,14 +6,13 @@ export const SearchBar = ({ showSearch, showSearchBar }) => {
   // const searchContainerRef = useRef(null)
   // useClickOutside(searchContainerRef, () => showSearchBar(false))
 
-  console.log('Search status: ', showSearch) // for debugging clickOutside hook
-  if (showSearch) {
-    return <Search placeholder="Search Here" />
-  } else return <></>
+  // if (showSearch) {
+  return <Search showSearch={showSearch} placeholder="Search Here" />
+  // } else return <></>
 }
 
 export const Search = styled.input`
-  display: block;
+  display: ${(props) => (props.showSearch ? 'block' : 'none')};
   position: relative;
   width: 100%;
   font-size: 15px;
@@ -32,7 +31,15 @@ export const Search = styled.input`
     color: #ddd;
   }
 
-  @media (max-width: 968px) {
-    display: none;
-  }
+  ${(props) =>
+    props.isMobile &&
+    `
+    box-shadow: none;
+    display: block;
+  font-size: 16px;
+  width: 93%;
+  margin: 1rem;
+  padding: 4px;
+
+  `}
 `
