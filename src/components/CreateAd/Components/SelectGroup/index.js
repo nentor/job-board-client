@@ -18,7 +18,9 @@ export const SelectGroup = ({ title, isRequired, options }) => {
       </ListingTitle>
       <Select id={title}>
         {options.map((option) => (
-          <option value={option}>{option}</option>
+          <option key={option} value={option}>
+            {option}
+          </option>
         ))}
       </Select>
     </Container>
