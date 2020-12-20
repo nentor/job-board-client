@@ -11,7 +11,7 @@ export const Modal = () => {
         <Header>
           <Title>Join OverReacted for Free</Title>
           <Description>
-            Access thousands of online classes in design, business, and more!
+            Access thousands of products or offer one yourself!
           </Description>
         </Header>
         <LogIn>
@@ -40,7 +40,7 @@ export const Modal = () => {
             </Column>
           </Form>
           <Socials>
-            <h1>Or log In with your Socials</h1>
+            <h1>Or Sign In In with your Socials</h1>
             <SocialButton facebook>
               <FontAwesomeIcon icon={faFacebook} />
               Facebook
@@ -81,7 +81,6 @@ const LogIn = styled.form`
 const Form = styled.div`
   display: flex;
   flex-direction: column;
-  padding-right: 20px;
 `
 const FormGroup = styled.div`
   dislay: flex;
@@ -91,7 +90,7 @@ const FormGroup = styled.div`
 `
 const Label = styled.label``
 const Input = styled.input`
-  width: 210px;
+  width: 216px;
   ${(props) =>
     props.password &&
     `
@@ -131,7 +130,9 @@ const SocialButton = styled.div`
 `
 
 const Button = styled.a`
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 19px;
   color: white;
   width: 100px;
