@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useClickOutside } from '../../../../hooks'
-import { Transition } from 'react-transition-group'
 
 export const DesktopNav = ({ showSearchBar, setActiveHeader, data }) => {
   const searchContainerRef = useRef(null)

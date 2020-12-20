@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { MobileNav, SearchBar, Header, DesktopNav } from './Components'
+import { MobileNav, SearchBar, Header, DesktopNav, SignIn } from './Components'
 
 export const Navbar = () => {
   const navig = [
@@ -34,6 +34,7 @@ export const Navbar = () => {
         data={navig}
         setActiveHeader={setActiveHeader}
       />
+      <SignIn />
       <SearchBar showSearch={searchBar} showSearchBar={setSearchBar} />
       <Header data={navig} isActive={activeHeader} />
     </>
