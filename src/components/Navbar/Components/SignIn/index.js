@@ -14,16 +14,6 @@ export const SignIn = ({ signIn, setSignIn }) => {
   return createPortal(<Modal> CLICK ME!!!!</Modal>, ref.current)
 }
 
-const Modal = styled.div`
-  position: fixed;
-  top: 20;
-  left: 20;
-  width: 10rem;
-  height: 10rem;
-  background: red;
-  cursor: pointer;
-`
-
 // const ModalRoot = document.querySelector('body')
 
 // export class SignIn extends Component {
