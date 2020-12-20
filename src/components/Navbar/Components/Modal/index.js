@@ -170,6 +170,7 @@ const Button = styled.a`
     height: auto;
     width: auto;
     padding: 10px;
+    margin-top: 10px;
     color: black;
   `}
 `
