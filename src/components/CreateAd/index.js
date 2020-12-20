@@ -1,8 +1,6 @@
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 
-import Flex, { FlexItem } from 'styled-flex-component'
-
 import {
   InputGroup,
   NewListing,
@@ -13,8 +11,9 @@ import {
   RadioGroup,
   FileUploader,
   Button,
-  Margin,
 } from './Components'
+
+import { Margin, Flex, FlexItem } from '../../utilities'
 
 const Reset = createGlobalStyle`
   *,

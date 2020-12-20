@@ -16,8 +16,7 @@
     "react-query": "^2.23.1",
     "react-query-devtools": "^2.5.1",
     "react-transition-group": "^4.4.1",
-    "styled-components": "^5.2.0",
-    "styled-flex-component": "^3.0.5"
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
