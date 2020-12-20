@@ -25,7 +25,7 @@ export const Navbar = () => {
 
   const [activeHeader, setActiveHeader] = useState(0)
   const [searchBar, setSearchBar] = useState(false)
-  const [signIn, setSignIn] = useState(true)
+  const [signIn, setSignIn] = useState(false)
 
   return (
     <>
@@ -38,7 +38,6 @@ export const Navbar = () => {
         signIn={signIn}
         setSignIn={setSignIn}
       />
-
       <SearchBar showSearch={searchBar} showSearchBar={setSearchBar} />
       <Header data={navig} isActive={activeHeader} />
     </>
