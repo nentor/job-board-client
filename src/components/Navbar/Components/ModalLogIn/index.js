@@ -5,7 +5,7 @@ import { Portal } from '../Portal'
 
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons'
 
-export const Modal = ({ handleClose, switchToLogIn }) => {
+export const ModalLogIn = ({ handleClose }) => {
   return (
     <>
       <Portal>
@@ -31,19 +31,6 @@ export const Modal = ({ handleClose, switchToLogIn }) => {
                       <br />
                       <Input type="e-mail"></Input>
                     </FormGroup>
-                    <Column>
-                      <FormGroup>
-                        <Label>Password</Label>
-                        <br />
-                        <Input password type="password"></Input>
-                      </FormGroup>
-                      <FormGroup>
-                        <Label>Confirm Password</Label>
-                        <br />
-
-                        <Input password type="password"></Input>
-                      </FormGroup>
-                    </Column>
                   </Credentials>
                 </Form>
                 <Socials>
@@ -61,8 +48,7 @@ export const Modal = ({ handleClose, switchToLogIn }) => {
               <Button signIn>Sign In</Button>
             </LogIn>
             <Plain>
-              If you are already a member -
-              <SwitchForm onCLick={switchToLogIn}>Log In</SwitchForm>
+              If you are already a member - <SwitchForm>Log In</SwitchForm>
             </Plain>
             <Button close onClick={handleClose}>
               ×
@@ -77,12 +63,13 @@ export const Modal = ({ handleClose, switchToLogIn }) => {
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  background: rgba(250, 250, 250, 0.6);
+  background: red;
   position: fixed;
   top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999999999;
 `
 const Wrapper = styled.div`
   margin-bottom: 15rem;
