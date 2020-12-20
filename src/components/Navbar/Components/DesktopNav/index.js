@@ -4,7 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useClickOutside } from '../../../../hooks'
 
-export const DesktopNav = ({ showSearchBar, setActiveHeader, data }) => {
+export const DesktopNav = ({
+  showSearchBar,
+  setActiveHeader,
+  data,
+  setSignIn,
+  signIn,
+}) => {
   const searchContainerRef = useRef(null)
   useClickOutside(searchContainerRef, () => showSearchBar(false))
 
@@ -59,7 +65,7 @@ export const DesktopNav = ({ showSearchBar, setActiveHeader, data }) => {
             </Searching>
           </NavigationItem>
         </Item>
-        <Button isRegular>
+        <Button isRegular onClick={() => setSignIn(true)}>
           <strong>Sign In</strong>
         </Button>
       </Container>
