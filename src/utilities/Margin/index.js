@@ -1,25 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const Margin = ({ left, right, top, bottom, children }) => {
-  const MargCss = styled.div`
-    ${() => {
-      let tempCss = ``
-      if (left) {
-        tempCss += `margin-left: ` + left / 2 + `rem;\n`
-      }
-      if (right) {
-        tempCss += `margin-right: ` + right / 2 + `rem;\n`
-      }
-      if (top) {
-        tempCss += `margin-top: ` + top / 2 + `rem;\n`
-      }
-      if (bottom) {
-        tempCss += `margin-bottom: ` + bottom / 2 + `rem;`
-      }
-      return tempCss
-    }}
-  `
+const MargCss = styled.div`
+  ${({ left }) => {
+    if (left) {
+      return `margin-left: ` + left / 2 + `rem;\n`
+    }
+  }}
+  ${({ right }) => {
+    if (right) {
+      return `margin-right: ` + right / 2 + `rem;\n`
+    }
+  }}
+    ${({ top }) => {
+    if (top) {
+      return `margin-top: ` + top / 2 + `rem;\n`
+    }
+  }}
+    ${({ bottom }) => {
+    if (bottom) {
+      return `margin-bottom: ` + bottom / 2 + `rem;`
+    }
+  }}
+`
 
-  return <MargCss> {children} </MargCss>
+export const Margin = ({ left, right, top, bottom, children }) => {
+  return (
+    <MargCss left={left} right={right} top={top} bottom={bottom}>
+      {children}
+    </MargCss>
+  )
 }
