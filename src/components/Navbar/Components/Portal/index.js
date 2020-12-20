@@ -1,8 +1,7 @@
-import React, { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
-import styled from 'styled-components'
 
-export const SignIn = ({ signIn, setSignIn }) => {
+export const Portal = ({ children }) => {
   const ref = useRef()
   const [mounted, setMounted] = useState(false)
 
@@ -11,7 +10,7 @@ export const SignIn = ({ signIn, setSignIn }) => {
     setMounted(true)
   }, [])
 
-  return createPortal(<Modal> CLICK ME!!!!</Modal>, ref.current)
+  return mounted ? createPortal(children, ref.current) : null
 }
 
 // const ModalRoot = document.querySelector('body')

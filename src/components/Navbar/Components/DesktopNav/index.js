@@ -65,7 +65,7 @@ export const DesktopNav = ({
             </Searching>
           </NavigationItem>
         </Item>
-        <Button isRegular onClick={() => setSignIn(true)}>
+        <Button isRegular onClick={() => setSignIn(!signIn)}>
           <strong>Sign In</strong>
         </Button>
       </Container>

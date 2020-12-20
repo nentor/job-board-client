@@ -1,68 +1,88 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Portal } from '../Portal'
 
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons'
 
 export const Modal = () => {
   return (
     <>
-      <Wrapper>
-        <Header>
-          <Title>Join OverReacted for Free</Title>
-          <Description>
-            Access thousands of products or offer one yourself!
-          </Description>
-        </Header>
-        <LogIn>
-          <Form>
-            <FormGroup>
-              <Label>Full Name</Label>
-              <br />
-              <Input type="text"></Input>
-            </FormGroup>
-            <FormGroup>
-              <Label>Email Address</Label>
-              <br />
-              <Input type="e-mail"></Input>
-            </FormGroup>
-            <Column>
-              <FormGroup>
-                <Label>Password</Label>
-                <br />
-                <Input password type="password"></Input>
-              </FormGroup>
-              <FormGroup>
-                <Label>Confirm Password</Label>
-                <br />
-                <Input password type="password"></Input>
-              </FormGroup>
-            </Column>
-          </Form>
-          <Socials>
-            <h1>Or Sign In In with your Socials</h1>
-            <SocialButton facebook>
-              <FontAwesomeIcon icon={faFacebook} />
-              Facebook
-            </SocialButton>
-            <SocialButton google>
-              <FontAwesomeIcon icon={faGoogle} />
-              Google
-            </SocialButton>
-          </Socials>
-        </LogIn>
-        <Button>Sign In</Button>
-      </Wrapper>
+      <Portal>
+        <Container>
+          <Wrapper>
+            <Header>
+              <Title>Join OverReacted for Free</Title>
+              <Description>
+                Access thousands of products or offer one yourself!
+              </Description>
+            </Header>
+            <LogIn>
+              <Form>
+                <FormGroup>
+                  <Label>Full Name</Label>
+                  <br />
+                  <Input type="text"></Input>
+                </FormGroup>
+                <FormGroup>
+                  <Label>Email Address</Label>
+                  <br />
+                  <Input type="e-mail"></Input>
+                </FormGroup>
+                <Column>
+                  <FormGroup>
+                    <Label>Password</Label>
+                    <br />
+                    <Input password type="password"></Input>
+                  </FormGroup>
+                  <FormGroup>
+                    <Label>Confirm Password</Label>
+                    <br />
+                    <Input password type="password"></Input>
+                  </FormGroup>
+                </Column>
+              </Form>
+              <Socials>
+                <h1>Or Sign In In with your Socials</h1>
+                <SocialButton facebook>
+                  <FontAwesomeIcon icon={faFacebook} />
+                  Facebook
+                </SocialButton>
+                <SocialButton google>
+                  <FontAwesomeIcon icon={faGoogle} />
+                  Google
+                </SocialButton>
+              </Socials>
+            </LogIn>
+            <Button>Sign In</Button>
+          </Wrapper>
+        </Container>
+      </Portal>
     </>
   )
 }
 
+const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 const Wrapper = styled.div`
-  width: 100%;
-  padding: 40px 30px 10px;
+  margin-bottom: 30rem;
   display: flex;
   font-size: 14px;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
 `
 const Header = styled.div`
   margin-bottom: 40px;
@@ -109,6 +129,7 @@ const Socials = styled.div`
   margin-left: 40px;
 `
 const SocialButton = styled.div`
+  cursor: pointer;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -138,4 +159,5 @@ const Button = styled.a`
   width: 100px;
   height: 30px;
   background: #db3236;
+  cursor: pointer;
 `

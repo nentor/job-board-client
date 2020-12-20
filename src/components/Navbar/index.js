@@ -29,7 +29,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <Modal />
+      {signIn && <Modal handleClose={() => setSignIn(false)} />}
       <MobileNav />
       <DesktopNav
         showSearchBar={setSearchBar}
