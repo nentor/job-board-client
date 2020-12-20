@@ -52,15 +52,13 @@ const Tooltip = styled.div`
   }
 `
 const Img = styled.div`
-  background-image: url('https://we-work-remotely.imgix.net/logos/0017/0021/logo.gif?ixlib=rails-4.0.0&w=50&h=50&dpr=2&fit=fill&auto=compress');
+  background: white
+    url('https://we-work-remotely.imgix.net/logos/0017/0021/logo.gif?ixlib=rails-4.0.0&w=50&h=50&dpr=2&fit=fill&auto=compress')
+    center center/contain no-repeat;
   border: 1px solid black;
   position: absolute;
   left: -35px;
-  background-repeat: no-repeat;
   border-radius: 50%;
-  background-position: center center;
-  background-color: white;
-  background-size: contain;
   height: 50px;
   width: 50px;
   margin-top: 15px;
@@ -87,10 +85,7 @@ const Span = styled.span`
 
 const Title = styled.span`
   cursor: pointer;
-  margin-left: 25px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  margin-right: 10px;
+  margin: 8px 10px 8px 25px;
   vertical-align: middle;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -102,9 +97,7 @@ const Title = styled.span`
   font-weight: bold;
 `
 const New = styled.span`
-  margin-top: 32px;
   padding: 6px 8px 3px 8px;
-  margin-right: 0px;
   margin: 0;
   text-transform: uppercase;
   font-size: 0.8rem;

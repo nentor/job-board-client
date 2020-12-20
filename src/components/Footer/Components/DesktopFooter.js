@@ -1,111 +1,99 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
-  
-export const DesktopFooter = ({footerData , ResourcesBannerData , BannerResourcesData}) => { 
- 
-
-    return (
-    
-      <FooterContainer>
+export const DesktopFooter = ({
+  footerData,
+  ResourcesBannerData,
+  BannerResourcesData,
+}) => {
+  return (
+    <FooterContainer>
       <FooterTop>
-      <FooterLeft>
-        <Work>{footerData.name}</Work>
+        <FooterLeft>
+          <Work>{footerData.name}</Work>
 
-        <br />
-        <br />
-
-        <Text>
-          {footerData.text}
-          <Anchor>{footerData.anchor}</Anchor>
-        </Text>
-      </FooterLeft>
-
-      <FooterRight>
-        <Number>{footerData.number}</Number>
-
-        <Job>{footerData.job}</Job>
-
-        <br />
-
-        <Button>{footerData.button}</Button>
-
-        <br />
-        <br />
-
-        <Bottom>
-          {footerData.bottom}
           <br />
-        </Bottom>
-      </FooterRight>
-    </FooterTop>
+          <br />
 
-    <ResourcesBanner>
-<Resources>
+          <Text>
+            {footerData.text}
+            <Anchor>{footerData.anchor}</Anchor>
+          </Text>
+        </FooterLeft>
 
-      <Ul>
-      <Li>
-            <Anchor1>
-          
-            {ResourcesBannerData.map((element) => (
-        <>
-       {element}
-       <Span>•</Span>
-       </>
-       
-        ))}
+        <FooterRight>
+          <Number>{footerData.number}</Number>
 
-            </Anchor1>
-          </Li>
-        </Ul>
+          <Job>{footerData.job}</Job>
 
-</Resources>
-    </ResourcesBanner>
+          <br />
 
-    <BannerResources>
-      <Banner>
-      <Ul1>
-      <Li1>
-            <Anchor2>
-          
-            {BannerResourcesData.map((element) => (
-        <>
-       {element}
-       <Span2>•</Span2>
-       </>
-        ))}
-            </Anchor2>
-          </Li1>
-        </Ul1>
-      </Banner>
-    </BannerResources>
+          <Button>{footerData.button}</Button>
+
+          <br />
+          <br />
+
+          <Bottom>
+            {footerData.bottom}
+            <br />
+          </Bottom>
+        </FooterRight>
+      </FooterTop>
+
+      <ResourcesBanner>
+        <Resources>
+          <Ul>
+            <Li>
+              <Anchor1>
+                {ResourcesBannerData.map((element) => (
+                  <>
+                    {element}
+                    <Span>•</Span>
+                  </>
+                ))}
+              </Anchor1>
+            </Li>
+          </Ul>
+        </Resources>
+      </ResourcesBanner>
+
+      <BannerResources>
+        <Banner>
+          <Ul1>
+            <Li1>
+              <Anchor2>
+                {BannerResourcesData.map((element) => (
+                  <>
+                    {element}
+                    <Span2>•</Span2>
+                  </>
+                ))}
+              </Anchor2>
+            </Li1>
+          </Ul1>
+        </Banner>
+      </BannerResources>
     </FooterContainer>
-
-   
-    )};
-
+  )
+}
 
 const FooterContainer = styled.div`
-text-size-adjust: 100%;
-color: #9b9b9b;
-background: #212529;
-overflow: hidden;
-width: 100vw;
-flex-direction: column;
-
+  text-size-adjust: 100%;
+  color: #9b9b9b;
+  background: #212529;
+  overflow: hidden;
+  width: 100vw;
+  flex-direction: column;
 
   @media (max-width: 600px) {
     text-align: center;
   }
-`;
+`
 
 const FooterLeft = styled.div`
   padding-top: 25px;
   flex-basis: 50%;
-`;
-
-
+`
 
 const FooterTop = styled.div`
   display: flex;
@@ -113,20 +101,19 @@ const FooterTop = styled.div`
 
   @media (max-width: 600px) {
     text-align: center;
-    display: flex;
     flex-direction: column;
   }
-`;
+`
 
 const Work = styled.h1`
-   font-size: 25px;
+  font-size: 25px;
   color: rgba(255, 255, 255, 0.8);
-`;
+`
 
 const Text = styled.p`
-  font-size:20px;
+  font-size: 20px;
   color: rgba(255, 255, 255, 0.8);
-`;
+`
 
 const Anchor = styled.div`
   cursor: pointer;
@@ -143,7 +130,7 @@ const Anchor = styled.div`
     text-align: center;
     padding-right: 40px;
   }
-`;
+`
 
 const FooterRight = styled.div`
   color: #9b9b9b;
@@ -151,13 +138,11 @@ const FooterRight = styled.div`
   float: right;
   padding-top: 25px;
   font-family: 'Neufile Grotesk Regular', sans-serif;
-`;
+`
 
 const Number = styled.div`
   text-align: right;
-  font-family: 'Neufile Grotesk Semi Bold', sans-serif;
-  font-weight: 500;
-  font-size: 2rem;
+  font: 500 2rem 'Neufile Grotesk Semi Bold', sans-serif;
   color: #f8f9fa;
 
   @media (max-width: 600px) {
@@ -170,7 +155,6 @@ const Job = styled.div`
   color: #f8f9fa;
   letter-spacing: 1px;
   font-size: 1.1em;
- 
 
   @media (max-width: 600px) {
     display: none;
@@ -191,18 +175,15 @@ const Button = styled.button`
   justify-content: center;
   outline: none;
   text-align: center;
-  
 
   &:hover {
     opacity: 0.7;
-
   }
-  
 
   @media (max-width: 600px) {
     display: none;
   }
-`;
+`
 
 const Bottom = styled.h1`
   text-align: right;
@@ -218,9 +199,8 @@ const Bottom = styled.h1`
 const Li = styled.li`
   list-style-type: disc;
   display: flex;
-  color: #FFFAFA;;
-`;
-
+  color: #fffafa; ;
+`
 
 const ResourcesBanner = styled.div`
   text-decoration: none;
@@ -231,9 +211,7 @@ const ResourcesBanner = styled.div`
   box-shadow: 0px 0px 2px;
   top: 234px;
   background: #4d5154;
-  
-`;
-
+`
 
 const Resources = styled.div`
   display: flex;
@@ -244,12 +222,12 @@ const Resources = styled.div`
   @media (max-width: 600px) {
     display: none;
   }
-`;
+`
 
 const Ul = styled.ul`
   font-size: 15px;
   display: inline-flex;
-`;
+`
 
 const Span = styled.span`
   font-family: 'Neufile Grotesk Regular', sans-serif;
@@ -262,54 +240,49 @@ const Span = styled.span`
 `
 
 const Anchor1 = styled.div`
-cursor: pointer;
-color: #FFFAFA;
+  cursor: pointer;
+  color: #fffafa;
 
-&:hover {
-  opacity: 0.7;
-}
-`;
-
+  &:hover {
+    opacity: 0.7;
+  }
+`
 
 const BannerResources = styled.div`
-  font-family: 'Neufile Grotesk Regular', sans-serif;
-  font-size: 30px;
+  font-family: 30px 'Neufile Grotesk Regular', sans-serif;
   display: block;
-  background:  #FFFAFA;
+  background: #fffafa;
   top: 235px;
   padding-right: 10px;
   width: 110%;
-  
 
   @media (max-width: 600px) {
     display: none;
   }
-`;
+`
 
 const Banner = styled.div`
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 
   @media (max-width: 600px) {
     display: none;
   }
-`;
+`
 
 const Ul1 = styled.ul`
   font-size: 10px;
-  padding-right:100px;
+  padding-right: 100px;
   display: flex;
   justify-content: center;
   color: #000000;
-`;
-
-
+`
 
 const Li1 = styled.li`
   text-size-adjust: 100%;
   display: flex;
   color: #000000;
-`;
+`
 
 const Anchor2 = styled.div`
   cursor: pointer;
@@ -323,11 +296,9 @@ const Anchor2 = styled.div`
   @media (max-width: 600px) {
     display: none;
   }
-`;
-
+`
 
 const Span2 = styled.span`
   color: #000000;
   padding: 0 24px 0 24px;
-`;
-
+`
