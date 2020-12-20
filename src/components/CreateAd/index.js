@@ -2,7 +2,6 @@ import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 
 import Flex, { FlexItem } from 'styled-flex-component'
-import { Margin } from 'styled-components-spacing'
 
 import {
   InputGroup,
@@ -14,6 +13,7 @@ import {
   RadioGroup,
   FileUploader,
   Button,
+  Margin,
 } from './Components'
 
 const Reset = createGlobalStyle`
