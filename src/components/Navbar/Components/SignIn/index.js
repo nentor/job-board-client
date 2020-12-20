@@ -1,24 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import ReactDOM from 'react-dom'
+import React, { useRef, useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import styled from 'styled-components'
 
-export const SignIn = () => {
-  let signInRoot
+export const SignIn = ({ signIn, setSignIn }) => {
+  const ref = useRef()
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    signInRoot = document.querySelector('#__next')
-    ReactDOM.createPortal(<Button> CLICK ME!!!!</Button>, signInRoot)
-  })
+    ref.current = document.querySelector('body')
+    setMounted(true)
+  }, [])
 
-  return <></>
+  return createPortal(<Modal> CLICK ME!!!!</Modal>, ref.current)
 }
 
-const Button = styled.div`
+const Modal = styled.div`
   position: fixed;
-  width: 5rem;
-  height: 5rem;
+  top: 20;
+  left: 20;
+  width: 10rem;
+  height: 10rem;
   background: red;
-  display: ${(props) => (props.isActive ? 'block' : 'none')};
+  cursor: pointer;
 `
 
 // const ModalRoot = document.querySelector('body')
