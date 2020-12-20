@@ -9,8 +9,7 @@ const Input = styled.input`
   padding: 1.6rem 1.2rem 1.6rem 1.2rem;
   height: 5.7rem;
   cursor: auto;
-  border-color: rgba(144, 146, 148, 0.2);
-  border-style: solid;
+  border: 2px solid rgba(144, 146, 148, 0.2);
   border-radius: 3px;
   background-color: #f8f9fa;
   outline-width: 2px;
