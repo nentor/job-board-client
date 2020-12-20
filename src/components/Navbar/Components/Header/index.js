@@ -19,7 +19,6 @@ export const Container = styled.div`
   background-image: url(https://weworkremotely.com/assets/Header@3x-c754140b276c02588dd4a43b70212d3668a75a54970c4baac325aeb60cb92f66.svg);
   // background-size: cover;
   background-position: bottom;
-
   font-size: 28px;
   color: black;
   padding: 50px;
