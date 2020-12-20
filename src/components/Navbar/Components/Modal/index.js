@@ -5,7 +5,7 @@ import { Portal } from '../Portal'
 
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons'
 
-export const Modal = () => {
+export const Modal = ({ handleClose }) => {
   return (
     <>
       <Portal>
@@ -55,6 +55,9 @@ export const Modal = () => {
               </Socials>
             </LogIn>
             <Button>Sign In</Button>
+            <Button close onClick={handleClose}>
+              Close
+            </Button>
           </Wrapper>
         </Container>
       </Portal>
@@ -160,4 +163,13 @@ const Button = styled.a`
   height: 30px;
   background: #db3236;
   cursor: pointer;
+  ${(props) =>
+    props.close &&
+    `
+    background: transparent;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    color: black;
+  `}
 `
