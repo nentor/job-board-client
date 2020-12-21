@@ -22,9 +22,9 @@ export const ModalLogIn = ({ handleClose, switchToSignIn, logged }) => {
                 <Form>
                   <Credentials>
                     <FormGroup>
-                      <Label>Username</Label>
+                      <Label>E-mail</Label>
                       <br />
-                      <Input type="text"></Input>
+                      <Input type="email"></Input>
                     </FormGroup>
                     <FormGroup>
                       <Label>Password</Label>
@@ -49,7 +49,7 @@ export const ModalLogIn = ({ handleClose, switchToSignIn, logged }) => {
                 </Form>
 
                 <Socials>
-                  <SocialsTitle>Or Log In In with your Socials</SocialsTitle>
+                  <SocialsTitle>Or Log In with your Socials</SocialsTitle>
                   <SocialButton facebook>
                     <FontAwesomeIcon icon={faFacebook} />
                     <BtnText>Facebook</BtnText>
@@ -266,7 +266,6 @@ const Plain = styled.div`
     text-decoration: underline;
     &:hover{
       color: #f03e3e;
-
       cursor:pointer;
     }
   `}

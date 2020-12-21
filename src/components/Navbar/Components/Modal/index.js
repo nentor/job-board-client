@@ -24,11 +24,6 @@ export const Modal = ({ handleClose, switchToLogIn, signed }) => {
                 <Form>
                   <Credentials>
                     <FormGroup>
-                      <Label>Full Name</Label>
-                      <br />
-                      <Input type="text"></Input>
-                    </FormGroup>
-                    <FormGroup>
                       <Label>Email Address</Label>
                       <br />
                       <Input type="e-mail"></Input>
@@ -59,7 +54,7 @@ export const Modal = ({ handleClose, switchToLogIn, signed }) => {
                   </Terms>
                 </Form>
                 <Socials>
-                  <SocialsTitle>Or Sign In In with your Socials</SocialsTitle>
+                  <SocialsTitle>Or Sign In with your Socials</SocialsTitle>
                   <SocialButton facebook>
                     <FontAwesomeIcon icon={faFacebook} />
                     <BtnText>Facebook</BtnText>
