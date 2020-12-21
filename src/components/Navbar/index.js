@@ -32,18 +32,26 @@ export const Navbar = () => {
 
   const [activeHeader, setActiveHeader] = useState(0)
   const [searchBar, setSearchBar] = useState(false)
-  const [signIn, setSignIn] = useState(false)
+  const [signIn, setSignIn] = useState(true)
   const [logIn, setLogIn] = useState(false)
 
   return (
     <>
       {signIn && (
+        <ModalLogIn
+          handleClose={() => setSignIn(false)}
+          switchToSignIn={() => setLogIn(false)}
+          logged={logIn}
+        />
+      )}
+      {signIn && (
         <Modal
           switchToLogIn={() => setLogIn(true)}
           handleClose={() => setSignIn(false)}
+          signed={logIn}
         />
       )}
-      ,{logIn && <ModalLogIn handleClose={() => setLogIn(false)} />}
+
       <MobileNav />
       <DesktopNav
         showSearchBar={setSearchBar}

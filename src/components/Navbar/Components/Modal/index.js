@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Portal } from '../Portal'
 
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons'
 
-export const Modal = ({ handleClose, switchToLogIn }) => {
+export const Modal = ({ handleClose, switchToLogIn, signed }) => {
+  const [isChecked, setIsChecked] = useState(false)
+
   return (
     <>
       <Portal>
-        <Container>
+        <Container isActive={!signed}>
           <Wrapper>
             <Header>
               <Title>Join OverReacted for Free</Title>
@@ -18,7 +20,7 @@ export const Modal = ({ handleClose, switchToLogIn }) => {
               </Description>
             </Header>
             <LogIn>
-              <FlexCred>
+              <FlexMain>
                 <Form>
                   <Credentials>
                     <FormGroup>
@@ -45,6 +47,17 @@ export const Modal = ({ handleClose, switchToLogIn }) => {
                       </FormGroup>
                     </Column>
                   </Credentials>
+
+                  <Button signIn>Sign In</Button>
+                  <Terms>
+                    <Customcheckbox
+                      isChecked={isChecked}
+                      onClick={() => setIsChecked(!isChecked)}
+                    >
+                      {/* <Checkmark isChecked={isChecked} /> */}
+                    </Customcheckbox>
+                    I Agree with the terms and conditions
+                  </Terms>
                 </Form>
                 <Socials>
                   <SocialsTitle>Or Sign In In with your Socials</SocialsTitle>
@@ -57,16 +70,17 @@ export const Modal = ({ handleClose, switchToLogIn }) => {
                     Google
                   </SocialButton>
                 </Socials>
-              </FlexCred>
-              <Button signIn>Sign In</Button>
+              </FlexMain>
             </LogIn>
-            <Plain>
-              If you are already a member -
-              <SwitchForm onCLick={switchToLogIn}>Log In</SwitchForm>
-            </Plain>
-            <Button close onClick={handleClose}>
-              ×
-            </Button>
+            <Flex column>
+              <Plain>
+                Already a member?
+                <SwitchForm onClick={switchToLogIn}>Log In</SwitchForm>
+              </Plain>
+              <Button close onClick={handleClose}>
+                ×
+              </Button>
+            </Flex>
           </Wrapper>
         </Container>
       </Portal>
@@ -75,12 +89,13 @@ export const Modal = ({ handleClose, switchToLogIn }) => {
 }
 
 const Container = styled.div`
+  display: ${(props) => (props.isActive ? 'flex' : 'none')};
   width: 100vw;
   height: 100vh;
   background: rgba(250, 250, 250, 0.6);
   position: fixed;
   top: 0;
-  display: flex;
+
   justify-content: center;
   align-items: center;
 `
@@ -108,8 +123,21 @@ const Description = styled.div`
   opacity: 0.8;
 `
 const LogIn = styled.form``
-const FlexCred = styled.div`
+const FlexMain = styled.div`
   display: flex;
+  @media (max-width: 968px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`
+const Flex = styled.div`
+  display: flex;
+  ${(props) =>
+    props.column &&
+    `
+  flex-direction: column;
+  align-items: center;
+  `}
 `
 const Form = styled.div`
   display: flex;
@@ -151,6 +179,15 @@ const Socials = styled.div`
   padding-left: 40px;
   border-left: 1px solid #e5e5e5;
   margin-left: 40px;
+  @media (max-width: 968px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0 0 0;
+    margin: 20px 0 0 0;
+    border: none;
+    border-top: 1px solid #e5e5e5;
+  }
 `
 const SocialsTitle = styled.div`
   font-size: 16px;
@@ -165,7 +202,7 @@ const SocialButton = styled.div`
   font-size: 17px;
   font-weight: 700;
   width: 100%;
-  height: 30%;
+  height: 20%;
   margin-top: 10px;
   border: none;
   box-shadow: 0 1px 5px rgba(10, 10, 10, 0.3);
@@ -184,6 +221,10 @@ const SocialButton = styled.div`
   color: #db3236;
 
   `}
+  @media (max-width: 968px) {
+    width: 70%;
+    height: 2rem;
+  }
 `
 
 const Button = styled.div`
@@ -203,7 +244,7 @@ const Button = styled.div`
   ${(props) =>
     props.signIn &&
     `
-
+    flex-grow: 0;
   `}
   ${(props) =>
     props.close &&
@@ -231,3 +272,44 @@ const SwitchForm = styled.div`
     color: #f03e3e;
   }
 `
+const Terms = styled.div`
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+`
+
+const Customcheckbox = styled.div`
+  position: inherit;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  background: #eee;
+  ${(props) =>
+    props.isChecked &&
+    `
+    background: #f03e3e;
+    transform: rotate(45deg);
+  `}
+  height: 15px;
+  width: 15px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  &:hover {
+    background: ${(props) => (props.isChecked ? '#d01e1e' : '#ccc')};
+  }
+`
+// const Checkmark = styled.div`
+//   opacity: ${(props) => (props.isChecked ? 1 : 0)};
+//   position: fixed;
+//   top: 28rem;
+//   left: 9.5rem;
+//   width: 3px;
+//   height: 7px;
+//   border: solid white;
+//   border-width: 0 3px 3px 0;
+//   transform: rotate(45deg);
+//   @media (max-width: 968px) {
+//     top: 23.6rem;
+//     left: 15.8rem;
+//   }
+// `
