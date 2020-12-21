@@ -32,7 +32,7 @@ export const Navbar = () => {
 
   const [activeHeader, setActiveHeader] = useState(0)
   const [searchBar, setSearchBar] = useState(false)
-  const [signIn, setSignIn] = useState(false)
+  const [signIn, setSignIn] = useState(true)
   const [logIn, setLogIn] = useState(false)
 
   return (

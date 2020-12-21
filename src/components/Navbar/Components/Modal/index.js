@@ -33,19 +33,18 @@ export const Modal = ({ handleClose, switchToLogIn, signed }) => {
                       <br />
                       <Input type="e-mail"></Input>
                     </FormGroup>
-                    <Column>
-                      <FormGroup>
-                        <Label>Password</Label>
-                        <br />
-                        <Input password type="password"></Input>
-                      </FormGroup>
-                      <FormGroup>
-                        <Label>Confirm Password</Label>
-                        <br />
 
-                        <Input password type="password"></Input>
-                      </FormGroup>
-                    </Column>
+                    <FormGroup>
+                      <Label>Password</Label>
+                      <br />
+                      <Input type="password"></Input>
+                    </FormGroup>
+                    <FormGroup>
+                      <Label>Confirm Password</Label>
+                      <br />
+
+                      <Input type="password"></Input>
+                    </FormGroup>
                   </Credentials>
 
                   <Button signIn>Sign In</Button>
@@ -63,11 +62,11 @@ export const Modal = ({ handleClose, switchToLogIn, signed }) => {
                   <SocialsTitle>Or Sign In In with your Socials</SocialsTitle>
                   <SocialButton facebook>
                     <FontAwesomeIcon icon={faFacebook} />
-                    Facebook
+                    <BtnText>Facebook</BtnText>
                   </SocialButton>
                   <SocialButton google>
                     <FontAwesomeIcon icon={faGoogle} />
-                    Google
+                    <BtnText>Google</BtnText>
                   </SocialButton>
                 </Socials>
               </FlexMain>
@@ -154,10 +153,11 @@ const FormGroup = styled.div`
 `
 const Label = styled.label``
 const Input = styled.input`
-  width: 216px;
-  otline: none;
-  border: none;
-  box-shadow: 0 1px 5px rgba(10, 10, 10, 0.3);
+  width: 270px;
+  font-size: 16px;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
   margin-top: 3px;
   &:focus {
     outline: none;
@@ -169,19 +169,14 @@ const Input = styled.input`
         margin-right: 10px;
     `}
 `
-const Column = styled.div`
-  display: flex;
-  flex-wrap: no-wrap;
-  width: 50%;
-`
 const Socials = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-left: 40px;
   border-left: 1px solid #e5e5e5;
   margin-left: 40px;
   @media (max-width: 968px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 20px 0 0 0;
     margin: 20px 0 0 0;
     border: none;
@@ -195,37 +190,40 @@ const SocialsTitle = styled.div`
 const SocialButton = styled.div`
   cursor: pointer;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: white;
-  font-size: 17px;
-  font-weight: 700;
-  width: 100%;
-  height: 20%;
-  margin-top: 10px;
+  position: relative;
+  width: 8.5rem;
+  padding: 12px 12px 10px;
+  color: white;
+  font-weight: 400;
+  margin-top: 20px;
   border: none;
-  box-shadow: 0 1px 5px rgba(10, 10, 10, 0.3);
+  border-radius: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
   &:hover {
     box-shadow: 0 1px 5px rgba(10, 10, 10, 0.8);
   }
   ${(props) =>
     props.facebook &&
     `
-  color: #3b5998;
+  background: #3b5998;
 
   `}
   ${(props) =>
     props.google &&
     `
-  color: #db3236;
+  background: #db3236;
 
   `}
   @media (max-width: 968px) {
     width: 70%;
-    height: 2rem;
   }
 `
-
+const BtnText = styled.div`
+  padding-left: 2.5rem;
+`
 const Button = styled.div`
   display: flex;
   justify-content: center;
@@ -237,13 +235,15 @@ const Button = styled.div`
   background: #f03e3e;
   cursor: pointer;
   border-radius: 2px;
+  transition: all 0.3s;
   &:hover {
     box-shadow: 0 1px 5px rgba(10, 10, 10, 0.8);
   }
   ${(props) =>
     props.signIn &&
     `
-    flex-grow: 0;
+    width: 280px;
+    margin-top: 10px;
   `}
   ${(props) =>
     props.close &&
@@ -278,6 +278,7 @@ const Terms = styled.div`
 `
 
 const Customcheckbox = styled.div`
+  transition: all 0.3s;
   position: inherit;
   cursor: pointer;
   top: 0;
