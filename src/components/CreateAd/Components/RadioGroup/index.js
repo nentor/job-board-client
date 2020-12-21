@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { Container, RequiredCircle, ListingTitle } from '../index'
@@ -25,13 +25,20 @@ const RadioGroupWrapper = styled.div`
 `
 
 export const RadioGroup = ({ title, isRequired, choices }) => {
+  const [optionChecked, setOptionChecked] = useState('Full-Time')
+
   return (
     <Container>
       <ListingTitle>Job Type {isRequired && <RequiredCircle />}</ListingTitle>
       <RadioGroupWrapper>
         {choices.map((choice) => (
           <div key={choice.value}>
-            <RadioButton id={choice.value} value={choice.value} />
+            <RadioButton
+              id={choice.value}
+              value={choice.value}
+              checked={optionChecked === choice.value}
+              onChange={() => setOptionChecked(choice.value)}
+            />
             <label htmlFor={choice.value}>{choice.value}</label>
           </div>
         ))}
