@@ -95,7 +95,6 @@ const Container = styled.div`
   background: rgba(250, 250, 250, 0.6);
   position: fixed;
   top: 0;
-
   justify-content: center;
   align-items: center;
 `
