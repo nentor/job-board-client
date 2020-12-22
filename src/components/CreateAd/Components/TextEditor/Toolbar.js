@@ -32,6 +32,10 @@ const ToolButton = styled.button`
   text-align: center;
   outline: none;
   border: none;
+
+  &:hover {
+    background-color: #ccc;
+  }
 `
 
 export const Toolbar = () => {
