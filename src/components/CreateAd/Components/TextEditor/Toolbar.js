@@ -19,12 +19,19 @@ const ToolRow = styled.div`
   justify-content: space-between;
 `
 
-const ToolGroup = styled.div``
+const ToolGroup = styled.div`
+  display: flex;
+  border: 1px solid #bbb;
+  border-top-color: #ccc;
+  border-radius: 3px;
+`
 
 const ToolButton = styled.button`
   height: 2.5rem;
   width: 2.5rem;
   text-align: center;
+  outline: none;
+  border: none;
 `
 
 export const Toolbar = () => {
@@ -60,7 +67,7 @@ export const Toolbar = () => {
         icon: faListOl,
       },
     ],
-    [],
+    [{}, {}],
   ]
 
   return (
