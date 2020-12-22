@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { MobileNav, SearchBar, Header, DesktopNav } from './Components'
+import { Modal } from './Components/Modal/'
 
 export const Navbar = () => {
   const navig = [
@@ -25,14 +26,19 @@ export const Navbar = () => {
 
   const [activeHeader, setActiveHeader] = useState(0)
   const [searchBar, setSearchBar] = useState(false)
+  const [signIn, setSignIn] = useState(false)
 
   return (
     <>
-      <MobileNav />
+      {signIn && <Modal handleClose={() => setSignIn(false)} />}
+
+      <MobileNav setSignIn={() => setSignIn(true)} />
       <DesktopNav
         showSearchBar={setSearchBar}
         data={navig}
         setActiveHeader={setActiveHeader}
+        signIn={signIn}
+        setSignIn={setSignIn}
       />
       <SearchBar showSearch={searchBar} showSearchBar={setSearchBar} />
       <Header data={navig} isActive={activeHeader} />

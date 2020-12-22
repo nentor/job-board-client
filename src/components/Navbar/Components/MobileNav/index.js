@@ -4,8 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { useClickOutside } from '../../../../hooks'
 import { Search } from '../SearchBar'
+import { Button } from '../DesktopNav'
 
-export const MobileNav = () => {
+export const MobileNav = ({ setSignIn }) => {
   const [expand, setExpand] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -62,6 +63,7 @@ export const MobileNav = () => {
                 <FontAwesomeIcon icon={faAngleRight} />
               </MobileNavItem>
             </Item>
+            <Button onClick={setSignIn}>Sign Up</Button>
           </Container>
         </>
       )}

@@ -3,9 +3,13 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useClickOutside } from '../../../../hooks'
-import { Transition } from 'react-transition-group'
 
-export const DesktopNav = ({ showSearchBar, setActiveHeader, data }) => {
+export const DesktopNav = ({
+  showSearchBar,
+  setActiveHeader,
+  data,
+  setSignIn,
+}) => {
   const searchContainerRef = useRef(null)
   useClickOutside(searchContainerRef, () => showSearchBar(false))
 
@@ -60,7 +64,7 @@ export const DesktopNav = ({ showSearchBar, setActiveHeader, data }) => {
             </Searching>
           </NavigationItem>
         </Item>
-        <Button isRegular>
+        <Button isRegular onClick={() => setSignIn(true)}>
           <strong>Sign In</strong>
         </Button>
       </Container>
@@ -125,7 +129,7 @@ export const Searching = styled(NavigationItem)`
     color: red;
   }
 `
-const Button = styled.button`
+export const Button = styled.button`
   margin: 1rem;
   background: #f03e3e;
   color: white;

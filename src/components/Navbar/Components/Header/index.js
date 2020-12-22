@@ -16,10 +16,15 @@ export const Header = ({ isActive, data }) => {
 }
 
 export const Container = styled.div`
+  background-image: url(https://weworkremotely.com/assets/Header@3x-c754140b276c02588dd4a43b70212d3668a75a54970c4baac325aeb60cb92f66.svg);
+  // background-size: cover;
+  background-position: bottom;
   font-size: 28px;
   color: black;
   padding: 50px;
+  border-bottom: 1px solid #dde0f4;
   text-align: center;
+  margin-bottom: 1rem;
 `
 export const Description = styled.div`
   font-size: 24px;
