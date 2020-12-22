@@ -41,14 +41,12 @@ export const Modal = ({ handleClose }) => {
                   <AuthModalSignIn
                     isChecked={isChecked}
                     setIsChecked={setIsChecked}
-                    signIn={!logIn}
                   />
                 )}
                 {logIn && (
                   <AuthModalLogIn
                     isChecked={isChecked}
                     setIsChecked={setIsChecked}
-                    logIn={logIn}
                   />
                 )}
                 <Socials />
