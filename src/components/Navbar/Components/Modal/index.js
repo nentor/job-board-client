@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Header } from './Components/Header'
-import { AuthModal } from './Components/AuthModal'
+import { AuthModalSignIn } from './Components/AuthModalSignIn'
+import { AuthModalLogIn } from './Components/AuthModalLogIn/index'
 import { Socials } from './Components/Socials'
 import { Footer } from './Components/Footer'
 
@@ -9,6 +10,7 @@ import { Portal } from '../Portal'
 
 export const Modal = ({ handleClose }) => {
   const [logIn, setLogIn] = useState(false)
+  const [isChecked, setIsChecked] = useState(false)
   return (
     <>
       <Portal>
@@ -17,7 +19,20 @@ export const Modal = ({ handleClose }) => {
             <MainForm>
               <Header />
               <FlexMain>
-                <AuthModal logIn={logIn} />
+                {!logIn && (
+                  <AuthModalSignIn
+                    isChecked={isChecked}
+                    setIsChecked={setIsChecked}
+                    signIn={!logIn}
+                  />
+                )}
+                {logIn && (
+                  <AuthModalLogIn
+                    isChecked={isChecked}
+                    setIsChecked={setIsChecked}
+                    logIn={logIn}
+                  />
+                )}
                 <Socials />
               </FlexMain>
             </MainForm>

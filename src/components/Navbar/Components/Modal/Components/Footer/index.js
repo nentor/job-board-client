@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Flex, Plain, Button } from '../AuthModal'
+import { Flex, Plain, Button } from '../AuthModalSignIn'
 
 export const Footer = ({ handleClose, logIn, setLogIn }) => {
   return (

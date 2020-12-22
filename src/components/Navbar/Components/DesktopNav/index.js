@@ -129,7 +129,7 @@ export const Searching = styled(NavigationItem)`
     color: red;
   }
 `
-const Button = styled.button`
+export const Button = styled.button`
   margin: 1rem;
   background: #f03e3e;
   color: white;

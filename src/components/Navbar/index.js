@@ -32,7 +32,7 @@ export const Navbar = () => {
     <>
       {signIn && <Modal handleClose={() => setSignIn(false)} />}
 
-      <MobileNav />
+      <MobileNav setSignIn={() => setSignIn(true)} />
       <DesktopNav
         showSearchBar={setSearchBar}
         data={navig}
