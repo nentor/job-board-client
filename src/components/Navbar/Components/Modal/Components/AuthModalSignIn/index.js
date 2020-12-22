@@ -2,6 +2,23 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 export const AuthModalSignIn = ({ isChecked, setIsChecked }) => {
+  const [state, setState] = useState({
+    email: '',
+    password: '',
+    confirmPassword: '',
+  })
+
+  const onSubmit = () => {
+    console.log(state)
+  }
+
+  const handleChange = (e) => {
+    e.persist()
+    setState((current) => ({
+      ...current,
+      [e.target.name]: e.target.value,
+    }))
+  }
   return (
     <>
       <Form>
@@ -9,23 +26,40 @@ export const AuthModalSignIn = ({ isChecked, setIsChecked }) => {
           <FormGroup>
             <Label>Email Address</Label>
             <br />
-            <Input type="e-mail"></Input>
+            <Input
+              type="e-mail"
+              name="email"
+              value={state.email}
+              onChange={handleChange}
+            ></Input>
           </FormGroup>
 
           <FormGroup>
             <Label>Password</Label>
             <br />
-            <Input type="password"></Input>
+            <Input
+              type="password"
+              name="password"
+              value={state.password}
+              onChange={handleChange}
+            ></Input>
           </FormGroup>
           <FormGroup>
             <Label>Confirm Password</Label>
             <br />
 
-            <Input type="password"></Input>
+            <Input
+              type="password"
+              name="confirmPassword"
+              value={state.confirmPassword}
+              onChange={handleChange}
+            ></Input>
           </FormGroup>
         </Credentials>
 
-        <Button signIn>Sign In</Button>
+        <Button signIn onClick={onSubmit}>
+          Sign In
+        </Button>
         <Terms>
           <Customcheckbox
             isChecked={isChecked}

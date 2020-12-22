@@ -13,6 +13,19 @@ import {
 } from '../AuthModalSignIn'
 
 export const AuthModalLogIn = ({ isChecked, setIsChecked }) => {
+  const [state, setState] = useState({ email: '', password: '' })
+
+  const onSubmit = () => {
+    console.log(state)
+  }
+
+  const handleChange = (e) => {
+    e.persist()
+    setState((current) => ({
+      ...current,
+      [e.target.name]: e.target.value,
+    }))
+  }
   return (
     <>
       <Form>
@@ -20,15 +33,27 @@ export const AuthModalLogIn = ({ isChecked, setIsChecked }) => {
           <FormGroup>
             <Label>E-mail</Label>
             <br />
-            <Input type="email"></Input>
+            <Input
+              type="email"
+              name="email"
+              value={state.email}
+              onChange={handleChange}
+            ></Input>
           </FormGroup>
           <FormGroup>
             <Label>Password</Label>
             <br />
-            <Input type="password"></Input>
+            <Input
+              type="password"
+              name="password"
+              value={state.password}
+              onChange={handleChange}
+            ></Input>
           </FormGroup>
         </Credentials>
-        <Button signIn>Sign In</Button>
+        <Button type="submit" signIn onClick={onSubmit}>
+          Log In
+        </Button>
 
         <Flex left>
           <Terms>
