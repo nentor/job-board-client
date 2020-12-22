@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useCallback, useEffect } from 'react'
 import styled from 'styled-components'
 import { Header } from './Components/Header'
 import { AuthModalSignIn } from './Components/AuthModalSignIn'
@@ -10,6 +10,18 @@ import { useClickOutside } from '../../../../hooks'
 import { Portal } from '../Portal'
 
 export const Modal = ({ handleClose }) => {
+  const escFunction = useCallback((event) => {
+    if (event.keyCode === 27) {
+      handleClose
+    }
+  }, [])
+  useEffect(() => {
+    document.addEventListener('keydown', escFunction, false)
+
+    return () => {
+      document.removeEventListener('keydown', escFunction, false)
+    }
+  })
   const modalContainerRef = useRef(null)
   useClickOutside(modalContainerRef, handleClose)
 
