@@ -15,13 +15,15 @@ export const Modal = ({ handleClose }) => {
       handleClose
     }
   }, [])
+
   useEffect(() => {
-    document.addEventListener('keydown', escFunction, false)
+    document.addEventListener('keydown', escFunction)
 
     return () => {
-      document.removeEventListener('keydown', escFunction, false)
+      document.removeEventListener('keydown', escFunction)
     }
   })
+
   const modalContainerRef = useRef(null)
   useClickOutside(modalContainerRef, handleClose)
 
@@ -73,6 +75,8 @@ const Container = styled.div`
   top: 0;
   justify-content: center;
   align-items: center;
+  @media (max-width: 968px) {
+  } ;
 `
 const Wrapper = styled.div`
   margin-bottom: 15rem;
@@ -85,6 +89,11 @@ const Wrapper = styled.div`
   padding: 20px;
   box-shadow: 0 1rem 3rem #000;
   border-radius: 10px;
+  @media (max-width: 968px) {
+    height: 100vh;
+    width: 100vh;
+    margin: 0;
+  } ;
 `
 
 const MainForm = styled.form``
