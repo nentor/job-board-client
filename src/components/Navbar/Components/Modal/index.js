@@ -1,21 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 import { Header } from './Components/Header'
 import { AuthModalSignIn } from './Components/AuthModalSignIn'
 import { AuthModalLogIn } from './Components/AuthModalLogIn/index'
 import { Socials } from './Components/Socials'
 import { Footer } from './Components/Footer'
+import { useClickOutside } from '../../../../hooks'
 
 import { Portal } from '../Portal'
 
 export const Modal = ({ handleClose }) => {
+  const modalContainerRef = useRef(null)
+  useClickOutside(modalContainerRef, handleClose)
+
   const [logIn, setLogIn] = useState(false)
   const [isChecked, setIsChecked] = useState(false)
   return (
     <>
       <Portal>
         <Container>
-          <Wrapper>
+          <Wrapper ref={modalContainerRef}>
             <MainForm>
               <Header />
               <FlexMain>

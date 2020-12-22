@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-export const AuthModalSignIn = ({ isChecked, setIsChecked, signIn }) => {
+export const AuthModalSignIn = ({ isChecked, setIsChecked }) => {
   return (
     <>
-      <Form signIn isActive={signIn}>
+      <Form>
         <Credentials>
           <FormGroup>
             <Label>Email Address</Label>

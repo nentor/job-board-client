@@ -12,10 +12,10 @@ import {
   Plain,
 } from '../AuthModalSignIn'
 
-export const AuthModalLogIn = ({ isChecked, setIsChecked, logIn }) => {
+export const AuthModalLogIn = ({ isChecked, setIsChecked }) => {
   return (
     <>
-      <Form logIn isActive={logIn}>
+      <Form>
         <Credentials>
           <FormGroup>
             <Label>E-mail</Label>
