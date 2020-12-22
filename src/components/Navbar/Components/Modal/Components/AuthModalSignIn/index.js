@@ -8,6 +8,7 @@ export const AuthModalSignIn = ({ isChecked, setIsChecked }) => {
     password: '',
     confirmPassword: '',
   })
+
   return (
     <>
       <Form>
@@ -19,7 +20,7 @@ export const AuthModalSignIn = ({ isChecked, setIsChecked }) => {
               type="e-mail"
               name="email"
               value={state.email}
-              onClick={handleChange}
+              onChange={() => useForm()}
             ></Input>
           </FormGroup>
 
@@ -30,7 +31,7 @@ export const AuthModalSignIn = ({ isChecked, setIsChecked }) => {
               type="password"
               name="password"
               value={state.password}
-              onChange={handleChange}
+              onChange={() => useForm()}
             ></Input>
           </FormGroup>
           <FormGroup>
@@ -41,12 +42,12 @@ export const AuthModalSignIn = ({ isChecked, setIsChecked }) => {
               type="password"
               name="confirmPassword"
               value={state.confirmPassword}
-              onChange={handleChange}
+              onChange={() => useForm()}
             ></Input>
           </FormGroup>
         </Credentials>
 
-        <Button signIn onClick={onSubmit}>
+        <Button signIn onClick={() => useForm}>
           Sign In
         </Button>
         <Terms>

@@ -3,6 +3,7 @@ import { useState } from 'react'
 export const useForm = (props) => {
   const [state, setState] = useState(props)
 
+  // Update states on Input change
   const handleChange = (e) => {
     e.persist()
     setState((current) => ({
@@ -10,9 +11,9 @@ export const useForm = (props) => {
       [e.target.name]: e.target.value,
     }))
   }
+  // Print out the states on Submit
 
-  const onSubmit = () => {
-    console.log(state)
-  }
-  return props
+  console.log(state)
+
+  return state
 }
