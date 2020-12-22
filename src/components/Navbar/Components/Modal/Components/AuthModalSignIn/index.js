@@ -1,24 +1,13 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { useForm } from '../../../../../../hooks/useForm'
 
 export const AuthModalSignIn = ({ isChecked, setIsChecked }) => {
-  const [state, setState] = useState({
+  const state = useForm({
     email: '',
     password: '',
     confirmPassword: '',
   })
-
-  const onSubmit = () => {
-    console.log(state)
-  }
-
-  const handleChange = (e) => {
-    e.persist()
-    setState((current) => ({
-      ...current,
-      [e.target.name]: e.target.value,
-    }))
-  }
   return (
     <>
       <Form>
@@ -30,7 +19,7 @@ export const AuthModalSignIn = ({ isChecked, setIsChecked }) => {
               type="e-mail"
               name="email"
               value={state.email}
-              onChange={handleChange}
+              onClick={handleChange}
             ></Input>
           </FormGroup>
 
