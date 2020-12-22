@@ -12,7 +12,7 @@ import { Portal } from '../Portal'
 export const Modal = ({ handleClose }) => {
   const escFunction = useCallback((event) => {
     if (event.keyCode === 27) {
-      handleClose
+      handleClose()
     }
   }, [])
 
