@@ -1,12 +1,6 @@
 import React, { useState, useRef } from 'react'
-import {
-  MobileNav,
-  SearchBar,
-  Header,
-  DesktopNav,
-  Modal,
-  ModalLogIn,
-} from './Components'
+import { MobileNav, SearchBar, Header, DesktopNav } from './Components'
+import { Modal } from './Components/Modal/'
 
 export const Navbar = () => {
   const navig = [
@@ -33,24 +27,10 @@ export const Navbar = () => {
   const [activeHeader, setActiveHeader] = useState(0)
   const [searchBar, setSearchBar] = useState(false)
   const [signIn, setSignIn] = useState(false)
-  const [logIn, setLogIn] = useState(false)
 
   return (
     <>
-      {signIn && (
-        <ModalLogIn
-          handleClose={() => setSignIn(false)}
-          switchToSignIn={() => setLogIn(false)}
-          logged={logIn}
-        />
-      )}
-      {signIn && (
-        <Modal
-          switchToLogIn={() => setLogIn(true)}
-          handleClose={() => setSignIn(false)}
-          signed={logIn}
-        />
-      )}
+      {signIn && <Modal handleClose={() => setSignIn(false)} />}
 
       <MobileNav />
       <DesktopNav

@@ -9,7 +9,6 @@ export const DesktopNav = ({
   setActiveHeader,
   data,
   setSignIn,
-  signIn,
 }) => {
   const searchContainerRef = useRef(null)
   useClickOutside(searchContainerRef, () => showSearchBar(false))
