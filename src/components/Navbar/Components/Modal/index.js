@@ -27,7 +27,7 @@ export const Modal = ({ handleClose }) => {
   const modalContainerRef = useRef(null)
   useClickOutside(modalContainerRef, handleClose)
 
-  const [logIn, setLogIn] = useState(false)
+  const [activeForm, setActiveForm] = useState('SignIn')
   const [isChecked, setIsChecked] = useState(false)
   return (
     <>
@@ -37,13 +37,13 @@ export const Modal = ({ handleClose }) => {
             <MainForm>
               <Header />
               <FlexMain>
-                {!logIn && (
+                {activeForm == 'SignIn' && (
                   <AuthModalSignIn
                     isChecked={isChecked}
                     setIsChecked={setIsChecked}
                   />
                 )}
-                {logIn && (
+                {activeForm == 'LogIn' && (
                   <AuthModalLogIn
                     isChecked={isChecked}
                     setIsChecked={setIsChecked}
@@ -54,8 +54,9 @@ export const Modal = ({ handleClose }) => {
             </MainForm>
             <Footer
               handleClose={handleClose}
-              logIn={logIn}
-              setLogIn={setLogIn}
+              activeForm={activeForm}
+              setLogIn={() => setActiveForm('LogIn')}
+              setSignIn={() => setActiveForm('SignIn')}
             />
           </Wrapper>
         </Container>

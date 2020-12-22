@@ -2,40 +2,32 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Flex, Plain, Button } from '../AuthModalSignIn'
 
-export const Footer = ({ handleClose, logIn, setLogIn }) => {
+export const Footer = ({ handleClose, activeForm, setLogIn, setSignIn }) => {
+  const activeFormData = {
+    SignIn: (
+      <>
+        Already a member?
+        <SwitchForm onClick={setLogIn}>Log In</SwitchForm>
+      </>
+    ),
+    LogIn: (
+      <>
+        Dont have an account yet?
+        <SwitchForm onClick={setSignIn}>Sign In</SwitchForm>
+      </>
+    ),
+  }
   return (
     <>
-      <SignIn isActive={!logIn}>
-        <Flex column>
-          <Plain>
-            Already a member?
-            <SwitchForm onClick={() => setLogIn(true)}>Log In</SwitchForm>
-          </Plain>
-          <Button close onClick={handleClose}>
-            ×
-          </Button>
-        </Flex>
-      </SignIn>
-      <LogIn isActive={logIn}>
-        <Flex column>
-          <Plain>
-            Dont have an account yet?
-            <SwitchForm onClick={() => setLogIn(false)}>Sign In</SwitchForm>
-          </Plain>
-          <Button close onClick={handleClose}>
-            ×
-          </Button>
-        </Flex>
-      </LogIn>
+      <Flex column>
+        <Plain>{activeFormData[activeForm]}</Plain>
+        <Button close onClick={handleClose}>
+          ×
+        </Button>
+      </Flex>
     </>
   )
 }
-const SignIn = styled.div`
-  display: ${(props) => (props.isActive ? 'block' : 'none')};
-`
-const LogIn = styled.div`
-  display: ${(props) => (props.isActive ? 'block' : 'none')};
-`
 
 const SwitchForm = styled.div`
   margin-left: 5px;
