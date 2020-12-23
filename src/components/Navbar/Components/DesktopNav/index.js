@@ -10,8 +10,8 @@ export const DesktopNav = ({
   data,
   setSignIn,
 }) => {
-  const searchContainerRef = useRef(null)
-  useClickOutside(searchContainerRef, () => showSearchBar(false))
+  // const searchContainerRef = useRef(null)
+  // useClickOutside(searchContainerRef, () => showSearchBar(false))
 
   const [showDropdown, setShowDropdown] = useState(false)
 
@@ -23,7 +23,7 @@ export const DesktopNav = ({
   ]
   return (
     <>
-      <Container ref={searchContainerRef}>
+      <Container>
         <Logo
           alt="Logo"
           src="https://avatars1.githubusercontent.com/u/72261383?s=200&v=4"
