@@ -1,19 +1,20 @@
 import { useState } from 'react'
 
 export const useForm = (props) => {
-  const [state, setState] = useState(props)
+  const [formState, setFormState] = useState(props)
 
   // Update states on Input change
   const handleChange = (e) => {
     e.persist()
-    setState((current) => ({
+    setFormState((current) => ({
       ...current,
       [e.target.name]: e.target.value,
     }))
   }
   // Print out the states on Submit
+  const onSubmit = () => {
+    console.log(formState)
+  }
 
-  console.log(state)
-
-  return state
+  return { formState, handleChange, onSubmit }
 }

@@ -14,7 +14,11 @@ import {
 } from '../AuthModalSignIn'
 
 export const AuthModalLogIn = ({ isChecked, setIsChecked }) => {
-  useForm({ email: '', password: '' })
+  const { formState, handleChange, onSubmit } = useForm({
+    email: '',
+    password: '',
+  })
+
   return (
     <>
       <Form>
@@ -25,7 +29,7 @@ export const AuthModalLogIn = ({ isChecked, setIsChecked }) => {
             <Input
               type="email"
               name="email"
-              value={state.email}
+              value={formState.email}
               onChange={handleChange}
             ></Input>
           </FormGroup>
@@ -35,7 +39,7 @@ export const AuthModalLogIn = ({ isChecked, setIsChecked }) => {
             <Input
               type="password"
               name="password"
-              value={state.password}
+              value={formState.password}
               onChange={handleChange}
             ></Input>
           </FormGroup>
