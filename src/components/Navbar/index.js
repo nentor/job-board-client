@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { MobileNav, SearchBar, Header, DesktopNav } from './Components'
 import { Modal } from './Components/Modal/'
+import { useClickOutside } from '../../hooks'
 
 export const Navbar = () => {
   const navig = [
@@ -26,21 +27,26 @@ export const Navbar = () => {
 
   const [activeHeader, setActiveHeader] = useState(0)
   const [searchBar, setSearchBar] = useState(false)
-  const [signIn, setSignIn] = useState(true)
+  const [signIn, setSignIn] = useState(false)
+
+  const searchContainerRef = useRef(null)
+  useClickOutside(searchContainerRef, () => setSearchBar(false))
 
   return (
     <>
       {signIn && <Modal handleClose={() => setSignIn(false)} />}
 
       <MobileNav setSignIn={() => setSignIn(true)} />
-      <DesktopNav
-        showSearchBar={setSearchBar}
-        data={navig}
-        setActiveHeader={setActiveHeader}
-        signIn={signIn}
-        setSignIn={setSignIn}
-      />
-      <SearchBar showSearch={searchBar} showSearchBar={setSearchBar} />
+      <div ref={searchContainerRef}>
+        <DesktopNav
+          showSearchBar={setSearchBar}
+          data={navig}
+          setActiveHeader={setActiveHeader}
+          signIn={signIn}
+          setSignIn={setSignIn}
+        />
+        <SearchBar showSearch={searchBar} />
+      </div>
       <Header data={navig} isActive={activeHeader} />
     </>
   )
