@@ -9,15 +9,21 @@ const Editor = dynamic(() => import('../../../Editor'), {
   ssr: false,
 })
 
+const Wrapper = styled((props) => <Container {...props} />)`
+  .ck-editor__editable {
+    min-height: 22.5rem;
+  }
+`
+
 export const TextEditor = ({ title, isRequired }) => {
   return (
-    <Container>
+    <Wrapper>
       <Margin bottom={2}>
         <ListingTitle>
           {title} {isRequired && <RequiredCircle />}
         </ListingTitle>
       </Margin>
       <Editor />
-    </Container>
+    </Wrapper>
   )
 }
