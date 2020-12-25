@@ -4,6 +4,11 @@ import { Margin } from 'styled-components-spacing'
 
 import { ListingTitle, RequiredCircle, Container } from '../'
 
+import dynamic from 'next/dynamic'
+const Editor = dynamic(() => import('../../../Editor'), {
+  ssr: false,
+})
+
 export const TextEditor = ({ title, isRequired }) => {
   return (
     <Container>
@@ -12,7 +17,7 @@ export const TextEditor = ({ title, isRequired }) => {
           {title} {isRequired && <RequiredCircle />}
         </ListingTitle>
       </Margin>
-      <textarea rows="12" cols="100"></textarea>
+      <Editor />
     </Container>
   )
 }
