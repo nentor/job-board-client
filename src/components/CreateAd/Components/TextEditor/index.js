@@ -13,6 +13,11 @@ const Wrapper = styled((props) => <Container {...props} />)`
   .ck-editor__editable {
     min-height: 22.5rem;
   }
+
+  .ck-editor__editable > * {
+    font-size: 1.68rem;
+    font-family: Arial;
+  }
 `
 
 export const TextEditor = ({ title, isRequired }) => {
