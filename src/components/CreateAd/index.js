@@ -1,5 +1,4 @@
 import React from 'react'
-import dynamic from 'next/dynamic'
 
 import { createGlobalStyle } from 'styled-components'
 
@@ -14,8 +13,6 @@ import {
   FileUploader,
   Button,
 } from './Components'
-
-import { Margin, Flex, FlexItem } from '../../utilities'
 
 const Reset = createGlobalStyle`
   *,
@@ -169,8 +166,6 @@ export const CreateAd = () => {
         </Flex>
 
         <TextEditor title="Company Description" />
-
-        <Editor />
 
         <Margin top={3}>
           <Button>Post job listing</Button>
