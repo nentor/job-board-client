@@ -4,8 +4,6 @@ import { Margin } from 'styled-components-spacing'
 
 import { ListingTitle, RequiredCircle, Container } from '../'
 
-import { Toolbar } from './Toolbar'
-
 export const TextEditor = ({ title, isRequired }) => {
   return (
     <Container>
@@ -14,7 +12,6 @@ export const TextEditor = ({ title, isRequired }) => {
           {title} {isRequired && <RequiredCircle />}
         </ListingTitle>
       </Margin>
-      <Toolbar />
       <textarea rows="12" cols="100"></textarea>
     </Container>
   )
