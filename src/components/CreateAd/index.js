@@ -19,7 +19,6 @@ import { Reset } from '../../components/Reset'
 export const CreateAd = () => {
   return (
     <>
-      <Reset />
       <NewAd>
         <Flex justifyBetween alignCenter>
           <FlexItem>
