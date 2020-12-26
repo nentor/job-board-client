@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { createGlobalStyle } from 'styled-components'
-
 import {
   InputGroup,
   NewListing,
@@ -16,21 +14,7 @@ import {
 
 import { Flex, FlexItem } from '../../utilities/Flex'
 import { Margin } from '../../utilities/Margin'
-
-const Reset = createGlobalStyle`
-  *,
-  *::before,
-  *::after {
-    padding: 0;
-    margin: 0;
-
-    box-sizing: border-box;
-  }
-
-  html {
-    font-size: 62.5%;
-  }
-`
+import { Reset } from '../../components/Reset'
 
 export const CreateAd = () => {
   return (
