@@ -12,9 +12,9 @@ export const useForm = (props) => {
     }))
   }
   // Print out the states on Submit
-  const onSubmit = () => {
+  const handleSubmit = () => {
     console.log(formState)
   }
 
-  return { formState, handleChange, onSubmit }
+  return { formState, handleChange, handleSubmit }
 }
