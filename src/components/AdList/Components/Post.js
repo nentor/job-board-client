@@ -26,7 +26,7 @@ export const Post = ({ adPost }) => {
   )
 }
 
-const ListEnt = styled.ul`
+const ListEnt = styled.li`
   display: list-item;
   margin-bottom: 8px;
   position: relative;
