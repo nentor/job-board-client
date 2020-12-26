@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { RequiredIndicator, Container, ListingTitle } from '../index'
+import { RequiredIndicator, Container, Label } from '../index'
 
 const Input = styled.input`
   margin: 0 0 3px;
@@ -16,9 +16,9 @@ const Input = styled.input`
 export const InputGroup = ({ type, title, inputText, isRequired }) => {
   return (
     <Container>
-      <ListingTitle name={title}>
+      <Label name={title}>
         {title} {isRequired && <RequiredIndicator />}
-      </ListingTitle>
+      </Label>
       <Input id={title} type={type} />
       <p>{inputText}</p>
     </Container>

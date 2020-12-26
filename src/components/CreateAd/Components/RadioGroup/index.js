@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { Container, RequiredIndicator, ListingTitle } from '../index'
+import { Container, RequiredIndicator, Label } from '../index'
 
 const RadioButton = styled.input.attrs({
   type: 'radio',
@@ -29,9 +29,7 @@ export const RadioGroup = ({ title, isRequired, choices }) => {
 
   return (
     <Container>
-      <ListingTitle>
-        Job Type {isRequired && <RequiredIndicator />}
-      </ListingTitle>
+      <Label>Job Type {isRequired && <RequiredIndicator />}</Label>
       <RadioGroupWrapper>
         {choices.map((choice) => (
           <div key={choice.value}>
