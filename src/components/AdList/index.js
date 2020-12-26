@@ -4,6 +4,7 @@ import { Post } from './Components'
 
 const mockData = [
   {
+    id: 1,
     user: 'RandomUser',
     title: 'Нужда от компютър',
     contact: '0888888888',
@@ -12,6 +13,7 @@ const mockData = [
     isNew: true,
   },
   {
+    id: 2,
     user: 'Sasho Dimitrov',
     title: 'Нужда от телефон',
     contact: '0999999999',
@@ -20,6 +22,7 @@ const mockData = [
     isNew: false,
   },
   {
+    id: 3,
     user: 'Petur Raychev',
     title: 'Нужда от таблет',
     contact: '077777777',
@@ -28,6 +31,7 @@ const mockData = [
     isNew: true,
   },
   {
+    id: 4,
     user: 'RandomUser',
     title: 'Нужда от компютър',
     contact: '0888888888',
@@ -36,6 +40,7 @@ const mockData = [
     isNew: true,
   },
   {
+    id: 5,
     user: 'Sasho Dimitrov',
     title: 'Нужда от телефон',
     contact: '0999999999',
@@ -44,6 +49,7 @@ const mockData = [
     isNew: false,
   },
   {
+    id: 6,
     user: 'Petur Raychev',
     title: 'Нужда от таблет',
     contact: '077777777',
@@ -59,7 +65,7 @@ export const AdList = () => {
       <Article>
         <List>
           {mockData.map((adPost) => {
-            return <Post adPost={adPost}></Post>
+            return <Post adPost={adPost} key={adPost.id}></Post>
           })}
         </List>
       </Article>
