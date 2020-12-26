@@ -4,6 +4,7 @@ import { createGlobalStyle } from 'styled-components'
 import { ReactQueryCacheProvider, QueryCache } from 'react-query'
 import { Hydrate, hydrate, dehydrate } from 'react-query/hydration'
 import { ReactQueryDevtools } from 'react-query-devtools'
+import { Reset } from '../Reset'
 
 export const queryCache = new QueryCache()
 
@@ -83,6 +84,7 @@ const App = ({ Component, pageProps }) => {
       <Hydrate state={pageProps.dehydratedState}>
         <ReactQueryDevtools initialIsOpen />
         <GlobalStyles />
+        <Reset />
         <ThemeProvider theme={{ mode: 'default' }}>
           <Component {...pageProps} />
         </ThemeProvider>
