@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Margin } from 'styled-components-spacing'
+import { Margin } from '../../../../utilities/Margin'
 
 import { ListingTitle, RequiredCircle, Container } from '../'
 
