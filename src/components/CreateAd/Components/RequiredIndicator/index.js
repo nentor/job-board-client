@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const RequiredCircle = styled.span`
+export const RequiredIndicator = styled.span`
   &::before {
     content: '';
     background: #f03e3e;

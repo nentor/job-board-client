@@ -1,6 +1,6 @@
 export * from './InputGroup'
 export * from './NewListing'
-export * from './RequiredCircle'
+export * from './RequiredIndicator'
 export * from './TextEditor'
 export * from './Title'
 export * from './SelectGroup'

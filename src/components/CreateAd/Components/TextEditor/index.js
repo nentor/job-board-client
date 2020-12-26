@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Margin } from '../../../../utilities/Margin'
 
-import { ListingTitle, RequiredCircle, Container } from '../'
+import { ListingTitle, RequiredIndicator, Container } from '../'
 
 import dynamic from 'next/dynamic'
 const Editor = dynamic(() => import('../../../Editor'), {
@@ -25,7 +25,7 @@ export const TextEditor = ({ title, isRequired }) => {
     <Wrapper>
       <Margin bottom={2}>
         <ListingTitle>
-          {title} {isRequired && <RequiredCircle />}
+          {title} {isRequired && <RequiredIndicator />}
         </ListingTitle>
       </Margin>
       <Editor />

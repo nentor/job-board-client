@@ -5,7 +5,7 @@ import { createGlobalStyle } from 'styled-components'
 import {
   InputGroup,
   NewListing,
-  RequiredCircle,
+  RequiredIndicator,
   TextEditor,
   Title,
   SelectGroup,
@@ -43,7 +43,7 @@ export const CreateAd = () => {
           </FlexItem>
           <FlexItem>
             <span className="requiredFields">
-              Required Fields <RequiredCircle />
+              Required Fields <RequiredIndicator />
             </span>
           </FlexItem>
         </Flex>
