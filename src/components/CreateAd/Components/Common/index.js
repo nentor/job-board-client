@@ -45,7 +45,7 @@ export const RequiredIndicator = styled.span`
   }
 `
 
-const ListingWrapper = styled.form`
+const AdWrapper = styled.form`
   max-width: 95rem;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -68,6 +68,6 @@ const ListingWrapper = styled.form`
   }
 `
 
-export const NewListing = ({ children }) => {
-  return <ListingWrapper>{children}</ListingWrapper>
+export const NewAd = ({ children }) => {
+  return <AdWrapper>{children}</AdWrapper>
 }

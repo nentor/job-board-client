@@ -2,7 +2,7 @@ import React from 'react'
 
 import {
   InputGroup,
-  NewListing,
+  NewAd,
   RequiredIndicator,
   TextEditor,
   Title,
@@ -20,7 +20,7 @@ export const CreateAd = () => {
   return (
     <>
       <Reset />
-      <NewListing>
+      <NewAd>
         <Flex justifyBetween alignCenter>
           <FlexItem>
             <Title>First, tell us about the position</Title>
@@ -157,7 +157,7 @@ export const CreateAd = () => {
         <Margin top={3}>
           <Button>Post job listing</Button>
         </Margin>
-      </NewListing>
+      </NewAd>
     </>
   )
 }
