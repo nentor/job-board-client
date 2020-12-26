@@ -14,7 +14,6 @@ import {
 
 import { Flex, FlexItem } from '../../utilities/Flex'
 import { Margin } from '../../utilities/Margin'
-import { Reset } from '../../components/Reset'
 
 export const CreateAd = () => {
   return (
