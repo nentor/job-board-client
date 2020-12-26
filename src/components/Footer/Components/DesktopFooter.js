@@ -46,10 +46,10 @@ export const DesktopFooter = ({
             <Li>
               <Anchor1>
                 {ResourcesBannerData.map((element) => (
-                  <>
-                    {element}
+                  <span key={element.id}>
+                    {element.label}
                     <Span>•</Span>
-                  </>
+                  </span>
                 ))}
               </Anchor1>
             </Li>
@@ -63,10 +63,10 @@ export const DesktopFooter = ({
             <Li1>
               <Anchor2>
                 {BannerResourcesData.map((element) => (
-                  <>
-                    {element}
+                  <span key={element.id}>
+                    {element.label}
                     <Span2>•</Span2>
-                  </>
+                  </span>
                 ))}
               </Anchor2>
             </Li1>
