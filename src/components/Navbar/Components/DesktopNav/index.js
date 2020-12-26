@@ -16,10 +16,10 @@ export const DesktopNav = ({
   const [showDropdown, setShowDropdown] = useState(false)
 
   const DropdownData = [
-    { label: 'PC', href: './pc' },
-    { label: 'Laptops', href: './laptops' },
-    { label: 'Consoles', href: './consoles' },
-    { label: 'Mobiles', href: './mobiles' },
+    { id: 1, label: 'PC', href: './pc' },
+    { id: 2, label: 'Laptops', href: './laptops' },
+    { id: 3, label: 'Consoles', href: './consoles' },
+    { id: 4, label: 'Mobiles', href: './mobiles' },
   ]
   return (
     <>
@@ -29,19 +29,21 @@ export const DesktopNav = ({
           src="https://avatars1.githubusercontent.com/u/72261383?s=200&v=4"
         />
         {data.map((item) => {
-          if (data[item.id].label === 'Categories') {
+          if (item.label === 'Categories') {
             return (
-              <div onMouseLeave={() => setShowDropdown(false)}>
+              <div key={item.id} onMouseLeave={() => setShowDropdown(false)}>
                 <Item>
                   <NavigationItem onMouseEnter={() => setShowDropdown(true)}>
-                    {data[item.id].label}
+                    {item.label}
                   </NavigationItem>
                 </Item>
                 <Dropdown isActive={showDropdown}>
-                  {DropdownData.map((item) => {
+                  {DropdownData.map((dropItem) => {
                     return (
-                      <Item Dropdown>
-                        <NavigationItem Dropdown>{item.label}</NavigationItem>
+                      <Item key={dropItem.id} Dropdown>
+                        <NavigationItem Dropdown>
+                          {dropItem.label}
+                        </NavigationItem>
                       </Item>
                     )
                   })}
@@ -50,7 +52,7 @@ export const DesktopNav = ({
             )
           }
           return (
-            <Item>
+            <Item key={item.id}>
               <NavigationItem onClick={() => setActiveHeader(item.id)}>
                 {data[item.id].label}
               </NavigationItem>
