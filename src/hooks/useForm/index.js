@@ -16,5 +16,5 @@ export const useForm = (props) => {
     console.log(formState)
   }
 
-  return { formState, handleChange, handleSubmit }
+  return { formState, setFormState, handleChange, handleSubmit }
 }
