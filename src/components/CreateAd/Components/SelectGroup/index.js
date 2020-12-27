@@ -24,8 +24,8 @@ export const SelectGroup = ({
         {title} {isRequired && <RequiredIndicator />}
       </Label>
       <Select id={title} value={value} name={name} onChange={onChange}>
-        {options.map((option) => (
-          <option key={option} value={option}>
+        {options.map((option, key) => (
+          <option key={key} value={option}>
             {option}
           </option>
         ))}
