@@ -36,8 +36,8 @@ export const RadioGroup = ({
     <Container>
       <Label>Job Type {isRequired && <RequiredIndicator />}</Label>
       <RadioGroupWrapper name={name}>
-        {choices.map((choice) => (
-          <div key={choice}>
+        {choices.map((choice, key) => (
+          <div key={key}>
             <RadioButton
               id={choice}
               name={name}
