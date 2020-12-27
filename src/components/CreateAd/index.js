@@ -34,10 +34,6 @@ export const CreateAd = () => {
     companyDescription: '',
   })
 
-  useEffect(() => {
-    console.log(formState)
-  }, [formState])
-
   const data = [
     {
       children: [
