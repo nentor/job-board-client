@@ -8,7 +8,7 @@ const InputFileUpload = styled.input.attrs({
 })`
   opacity: 0;
   min-height: 14rem;
-  min-width: 88.2rem;
+  max-width: 89rem;
   cursor: pointer;
 `
 
