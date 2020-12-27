@@ -28,7 +28,9 @@ class Editor extends Component {
               },
             },
           }}
-          data=""
+          data={this.props.data}
+          onChange={this.props.onChange}
+
           // onInit={(editor) => {
           //   // You can store the "editor" and use when it is needed.
           //   console.log('Editor is ready to use!', editor)

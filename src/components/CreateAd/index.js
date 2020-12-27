@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import {
   InputGroup,
@@ -15,8 +15,29 @@ import {
 import { Flex, FlexItem } from '../../utilities/Flex'
 import { Margin } from '../../utilities/Margin'
 import { Reset } from '../../components/Reset'
+import { useForm } from '../../hooks/useForm'
 
 export const CreateAd = () => {
+  const { formState, setFormState, handleChange, handleSubmit } = useForm({
+    jobTitle: '',
+    category: '',
+    jobType: 'Full-Time',
+    companyHQ: '',
+    regionalRestrictions: '',
+    howToApply: '',
+    jobDescription: '',
+    companyName: '',
+    companyStatement: '',
+    logo: '',
+    companyWebsiteURL: '',
+    email: '',
+    companyDescription: '',
+  })
+
+  useEffect(() => {
+    console.log(formState)
+  }, [formState])
+
   return (
     <>
       <Reset />
@@ -36,6 +57,9 @@ export const CreateAd = () => {
           title="Job Title"
           inputText="Example: “Senior Designer”.   Titles must describe one position."
           isRequired={true}
+          value={formState.jobTitle}
+          onChange={handleChange}
+          name="jobTitle"
         />
 
         <Flex>
@@ -54,6 +78,9 @@ export const CreateAd = () => {
                 'Product',
                 'All Other Remote',
               ]}
+              value={formState.category}
+              onChange={handleChange}
+              name="category"
             />
           </FlexItem>
           <FlexItem basis="50%">
@@ -62,6 +89,9 @@ export const CreateAd = () => {
                 title="Job Type"
                 choices={[{ value: 'Full-Time' }, { value: 'Contract' }]}
                 isRequired={true}
+                value={formState.jobType}
+                onChange={handleChange}
+                name="jobType"
               />
             </Margin>
           </FlexItem>
@@ -73,6 +103,9 @@ export const CreateAd = () => {
               title="Company HQ"
               inputText="Example: “Chicago, IL”,   “Stockholm, Sweden”"
               isRequired={true}
+              value={formState.companyHQ}
+              onChange={handleChange}
+              name="companyHQ"
             />
           </FlexItem>
           <FlexItem basis="50%">
@@ -92,6 +125,9 @@ export const CreateAd = () => {
                   'Africa Only',
                   "Other (don't specify)",
                 ]}
+                value={formState.regionalRestrictions}
+                onChange={handleChange}
+                name="regionalRestrictions"
               />
             </Margin>
           </FlexItem>
@@ -101,9 +137,18 @@ export const CreateAd = () => {
           title="How to Apply"
           inputText="Link to Application page or Email address"
           isRequired={true}
+          value={formState.howToApply}
+          onChange={handleChange}
+          name="howToApply"
         />
 
-        <TextEditor title="Job Description" isRequired={true} />
+        <TextEditor
+          title="Job Description"
+          isRequired={true}
+          value={formState.jobDescription}
+          setFormState={setFormState}
+          name="jobDescription"
+        />
 
         <Flex column>
           <FlexItem>
@@ -121,16 +166,25 @@ export const CreateAd = () => {
           title="Company Name"
           isRequired={true}
           inputText="Enter your company or organization’s name."
+          value={formState.companyName}
+          onChange={handleChange}
+          name="companyName"
         />
 
         <InputGroup
           title="Company Statement"
           inputText="Enter your company or organization’s mission statement. This will be displayed on your company’s profile."
+          value={formState.companyStatement}
+          onChange={handleChange}
+          name="companyStatement"
         />
 
         <FileUploader
           title="Logo"
           inputText="It’s highly recommended to use your Twitter or Facebook avatar. Optional — Your company logo will appear at the top of your listing."
+          value={formState.logo}
+          onChange={handleChange}
+          name="logo"
         />
 
         <Flex>
@@ -139,6 +193,9 @@ export const CreateAd = () => {
               title="Company's Website URL"
               isRequired={true}
               inputText="Example: https://mybusiness.com/"
+              value={formState.companyWebsiteURL}
+              onChange={handleChange}
+              name="companyWebsiteURL"
             />
           </FlexItem>
           <FlexItem basis="50%">
@@ -147,12 +204,20 @@ export const CreateAd = () => {
                 title="Email"
                 isRequired={true}
                 inputText="We’ll send your receipt and confirmation email here."
+                value={formState.email}
+                onChange={handleChange}
+                name="email"
               />
             </Margin>
           </FlexItem>
         </Flex>
 
-        <TextEditor title="Company Description" />
+        <TextEditor
+          title="Company Description"
+          value={formState.companyDescription}
+          setFormState={setFormState}
+          name="companyDescription"
+        />
 
         <Margin top={3}>
           <Button>Post job listing</Button>

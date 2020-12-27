@@ -24,20 +24,26 @@ const RadioGroupWrapper = styled.div`
   }
 `
 
-export const RadioGroup = ({ title, isRequired, choices }) => {
-  const [optionChecked, setOptionChecked] = useState('Full-Time')
-
+export const RadioGroup = ({
+  title,
+  isRequired,
+  choices,
+  value,
+  name,
+  onChange,
+}) => {
   return (
     <Container>
       <Label>Job Type {isRequired && <RequiredIndicator />}</Label>
-      <RadioGroupWrapper>
+      <RadioGroupWrapper name={name}>
         {choices.map((choice) => (
           <div key={choice.value}>
             <RadioButton
               id={choice.value}
+              name={name}
               value={choice.value}
-              checked={optionChecked === choice.value}
-              onChange={() => setOptionChecked(choice.value)}
+              checked={value === choice.value}
+              onChange={onChange}
             />
             <label htmlFor={choice.value}>{choice.value}</label>
           </div>

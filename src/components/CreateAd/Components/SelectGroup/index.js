@@ -10,13 +10,20 @@ const Select = styled.select`
   border: 1.5px solid rgba(144, 146, 148, 0.2);
 `
 
-export const SelectGroup = ({ title, isRequired, options }) => {
+export const SelectGroup = ({
+  title,
+  isRequired,
+  options,
+  value,
+  name,
+  onChange,
+}) => {
   return (
     <Container>
       <Label name={title}>
         {title} {isRequired && <RequiredIndicator />}
       </Label>
-      <Select id={title}>
+      <Select id={title} value={value} name={name} onChange={onChange}>
         {options.map((option) => (
           <option key={option} value={option}>
             {option}

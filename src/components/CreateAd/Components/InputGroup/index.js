@@ -13,13 +13,27 @@ const Input = styled.input`
   background-color: #f8f9fa;
 `
 
-export const InputGroup = ({ type, title, inputText, isRequired }) => {
+export const InputGroup = ({
+  type,
+  title,
+  inputText,
+  isRequired,
+  value,
+  onChange,
+  name,
+}) => {
   return (
     <Container>
       <Label name={title}>
         {title} {isRequired && <RequiredIndicator />}
       </Label>
-      <Input id={title} type={type} />
+      <Input
+        id={title}
+        type={type}
+        value={value}
+        onChange={onChange}
+        name={name}
+      />
       <p>{inputText}</p>
     </Container>
   )
