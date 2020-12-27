@@ -38,6 +38,75 @@ export const CreateAd = () => {
     console.log(formState)
   }, [formState])
 
+  const data = [
+    {
+      children: [
+        {
+          isRequired: true,
+          type: 'text',
+          meta: {
+            description: 'Job description',
+            header: 'Job Title',
+          },
+        },
+      ],
+    },
+    {
+      children: [
+        {
+          isRequired: true,
+          type: 'select',
+          meta: {
+            description: 'Job description',
+            header: 'Job Title',
+          },
+          children: [
+            'gosho',
+            'gosho',
+            'gosho',
+            'gosho',
+            'gosho',
+            'gosho',
+            'gosho',
+          ],
+        },
+        {
+          isRequired: true,
+          type: 'radio',
+          meta: {
+            description: 'Job description',
+            header: 'Job Title',
+          },
+          children: ['gosho', 'gosho'],
+        },
+      ],
+    },
+    {
+      children: [
+        {
+          isRequired: true,
+          type: 'description',
+          meta: {
+            description: 'Job description',
+            header: 'Job Title',
+          },
+        },
+      ],
+    },
+    {
+      children: [
+        {
+          isRequired: true,
+          type: 'photo',
+          meta: {
+            description: 'Job description',
+            header: 'Job Title',
+          },
+        },
+      ],
+    },
+  ]
+
   return (
     <>
       <Reset />
