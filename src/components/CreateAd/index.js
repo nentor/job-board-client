@@ -138,6 +138,7 @@ export const CreateAd = () => {
                             value={formState[meta.name]}
                             setFormState={setFormState}
                             name={formState[meta.name]}
+                            inputText={meta.description}
                           />
                         )}
                         {child.type === 'photo' && <FileUploader />}
@@ -159,6 +160,7 @@ export const CreateAd = () => {
                             name={meta.name}
                             value={formState[meta.name] || children[0]}
                             onChange={handleChange}
+                            inputText={meta.description}
                           />
                         )}
                       </Margin>
