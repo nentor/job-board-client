@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import {
   InputGroup,
   NewAd,
-  RequiredIndicator,
   TextEditor,
-  Title,
   SelectGroup,
   RadioGroup,
   FileUploader,
