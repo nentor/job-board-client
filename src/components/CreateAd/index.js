@@ -122,16 +122,7 @@ export const CreateAd = () => {
                           arr.length > 1 && key === arr.length - 1 ? '4' : '0'
                         }
                       >
-                        {child.type === 'text' && (
-                          <InputGroup
-                            isRequired={isRequired}
-                            title={meta.header}
-                            inputText={meta.description}
-                            onChange={handleChange}
-                            value={formState[meta.name]}
-                          />
-                        )}
-                        {child.type === 'number' && (
+                        {(child.type === 'text' || child.type === 'number') && (
                           <InputGroup
                             isRequired={isRequired}
                             title={meta.header}
