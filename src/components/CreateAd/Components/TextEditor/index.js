@@ -19,6 +19,11 @@ const Wrapper = styled((props) => <Container {...props} />)`
     font-size: 1.68rem;
     font-family: Arial;
   }
+
+  .ck > * {
+    min-width: 0% !important;
+    max-width: 100% !important;
+  }
 `
 
 export const TextEditor = ({
