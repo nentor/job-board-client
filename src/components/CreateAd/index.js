@@ -165,8 +165,8 @@ export const CreateAd = () => {
                             isRequired={isRequired}
                             title={meta.header}
                             choices={children}
-                            name={formState[meta.name]}
-                            value={children[0]}
+                            name={meta.name}
+                            value={formState[meta.name] || children[0]}
                             onChange={handleChange}
                           />
                         )}
