@@ -17,6 +17,7 @@ export const SelectGroup = ({
   value,
   name,
   onChange,
+  inputText,
 }) => {
   return (
     <Container>
@@ -30,6 +31,7 @@ export const SelectGroup = ({
           </option>
         ))}
       </Select>
+      <p>{inputText}</p>
     </Container>
   )
 }

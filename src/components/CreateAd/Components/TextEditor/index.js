@@ -27,6 +27,7 @@ export const TextEditor = ({
   name,
   value,
   setFormState,
+  inputText,
 }) => {
   const handleChange = (event, editor) => {
     setFormState((prevState) => {
@@ -42,6 +43,7 @@ export const TextEditor = ({
         </Label>
       </Margin>
       <Editor name={name} data={value} onChange={handleChange} />
+      <p>{inputText}</p>
     </Wrapper>
   )
 }

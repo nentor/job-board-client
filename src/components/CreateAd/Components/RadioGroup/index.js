@@ -31,6 +31,7 @@ export const RadioGroup = ({
   value,
   name,
   onChange,
+  inputText,
 }) => {
   return (
     <Container>
@@ -49,6 +50,7 @@ export const RadioGroup = ({
           </div>
         ))}
       </RadioGroupWrapper>
+      {inputText}
     </Container>
   )
 }
