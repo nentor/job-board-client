@@ -20,9 +20,8 @@ const Wrapper = styled((props) => <Container {...props} />)`
     font-family: Arial;
   }
 
-  .ck > * {
-    min-width: 0% !important;
-    max-width: 100% !important;
+  .ck.ck-toolbar.ck-toolbar_grouping > .ck-toolbar__items {
+    flex-wrap: wrap;
   }
 `
 
