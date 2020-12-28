@@ -141,7 +141,13 @@ export const CreateAd = () => {
                             inputText={meta.description}
                           />
                         )}
-                        {child.type === 'photo' && <FileUploader />}
+                        {child.type === 'photo' && (
+                          <FileUploader
+                            title={meta.header}
+                            isRequired={isRequired}
+                            inputText={meta.description}
+                          />
+                        )}
                         {child.type === 'select' && (
                           <SelectGroup
                             isRequired={isRequired}
