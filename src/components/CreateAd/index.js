@@ -106,7 +106,7 @@ export const CreateAd = () => {
     <>
       <Reset />
       <NewAd>
-        {data.map(({ children }, key) => {
+        {data?.map(({ children }, key) => {
           return (
             <Flex justifyBetween alignCenter key={key}>
               {children?.map((child, key, arr) => {
