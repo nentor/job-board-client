@@ -1,14 +1,53 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
+import styled from 'styled-components'
+import { Margin } from '../../../../utilities/Margin'
 
-import { ListingTitle, RequiredCircle, Container } from '../index'
+import { Label, RequiredIndicator, Container } from '../'
 
-export const TextEditor = ({ title, isRequired }) => {
+import dynamic from 'next/dynamic'
+
+const Editor = dynamic(() => import('../../../Editor'), {
+  ssr: false,
+})
+
+const Wrapper = styled((props) => <Container {...props} />)`
+  .ck-editor__editable {
+    min-height: 22.5rem;
+  }
+
+  .ck-editor__editable > * {
+    font-size: 1.68rem;
+    font-family: Arial;
+  }
+
+  .ck.ck-toolbar.ck-toolbar_grouping > .ck-toolbar__items {
+    flex-wrap: wrap;
+  }
+`
+
+export const TextEditor = ({
+  title,
+  isRequired,
+  name,
+  value,
+  setFormState,
+  inputText,
+}) => {
+  const handleChange = (event, editor) => {
+    setFormState((prevState) => {
+      return { ...prevState, [name]: editor.getData() }
+    })
+  }
+
   return (
-    <Container>
-      <ListingTitle>
-        {title} {isRequired && <RequiredCircle />}
-      </ListingTitle>
-      <textarea rows="12" cols="100"></textarea>
-    </Container>
+    <Wrapper>
+      <Margin bottom={2}>
+        <Label>
+          {title} {isRequired && <RequiredIndicator />}
+        </Label>
+      </Margin>
+      <Editor name={name} data={value} onChange={handleChange} />
+      <p>{inputText}</p>
+    </Wrapper>
   )
 }

@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { Container, ListingTitle, isRequired } from '../index'
+import { Container, Label, RequiredIndicator } from '../index'
 
 const InputFileUpload = styled.input.attrs({
   type: 'file',
 })`
   opacity: 0;
   min-height: 14rem;
-  min-width: 88.2rem;
+  max-width: 89rem;
   cursor: pointer;
 `
 
@@ -16,12 +16,10 @@ const InputFileUploadWrapper = styled.div`
   font-size: 0.95rem;
   padding: 1.6rem 1.2rem 1.6rem 1.2rem;
   cursor: auto;
-  border: none rgba(144, 146, 148, 0.2);
-  border-radius: 3px;
+  border: 3px solid rgba(144, 146, 148, 0.2);
   margin: 0 0 5px 0;
   background-color: #f8f9fa;
-  outline-width: 2px;
-  outline-color: rgba(144, 146, 148, 0.2);
+  outline: 2px none rgba(144, 146, 148, 0.2);
 
   position: relative;
 
@@ -37,14 +35,20 @@ const InputFileUploadWrapper = styled.div`
   }
 `
 
-export const FileUploader = ({ title, isRequired, inputText }) => {
+export const ImgUpload = ({ title, isRequired, inputText }) => {
+  const [file, setFile] = useState('')
+
+  function handleUpload(event) {
+    setFile(event.target.files[0])
+  }
+
   return (
     <Container>
-      <ListingTitle>
-        {title} {isRequired && <RequiredCircle />}
-      </ListingTitle>
+      <Label>
+        {title} {isRequired && <RequiredIndicator />}
+      </Label>
       <InputFileUploadWrapper>
-        <InputFileUpload />
+        <InputFileUpload onChange={handleUpload} />
       </InputFileUploadWrapper>
       <p>{inputText}</p>
     </Container>
