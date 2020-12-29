@@ -35,7 +35,7 @@ const InputFileUploadWrapper = styled.div`
   }
 `
 
-export const FileUploader = ({ title, isRequired, inputText }) => {
+export const ImgUpload = ({ title, isRequired, inputText }) => {
   const [file, setFile] = useState('')
 
   function handleUpload(event) {

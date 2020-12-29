@@ -6,7 +6,7 @@ import {
   TextEditor,
   SelectGroup,
   RadioGroup,
-  FileUploader,
+  ImgUpload,
   Button,
 } from './Components'
 
@@ -139,7 +139,7 @@ export const CreateAd = () => {
                         />
                       )}
                       {child.type === 'photo' && (
-                        <FileUploader
+                        <ImgUpload
                           title={meta.header}
                           isRequired={isRequired}
                           inputText={meta.description}
