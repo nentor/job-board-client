@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { Container, Label, RequiredIndicator } from '../index'
@@ -36,13 +36,19 @@ const InputFileUploadWrapper = styled.div`
 `
 
 export const FileUploader = ({ title, isRequired, inputText }) => {
+  const [file, setFile] = useState('')
+
+  function handleUpload(event) {
+    setFile(event.target.files[0])
+  }
+
   return (
     <Container>
       <Label>
         {title} {isRequired && <RequiredIndicator />}
       </Label>
       <InputFileUploadWrapper>
-        <InputFileUpload />
+        <InputFileUpload onChange={handleUpload} />
       </InputFileUploadWrapper>
       <p>{inputText}</p>
     </Container>
